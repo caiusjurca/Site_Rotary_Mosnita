@@ -1,47 +1,80 @@
 export const projects = [
   {
     id: "proiect-1",
-    title: "Renovarea Bibliotecii Școlii Moșnița Veche",
-    status: "finalizat", // finalizat or active
-    date: "Iunie - Iulie 2025",
-    description: "Modernizarea completă a spațiului bibliotecii școlii gimnaziale. Am dotat biblioteca cu mobilier nou ergonomic, am donat peste 1.500 de volume de cărți și am implementat un colț digital echipat cu 5 calculatoare moderne și acces la internet.",
-    image: "/assets/proiect-biblioteca.jpg",
-    budget: "12.500 EUR",
-    beneficiaries: "Peste 450 de elevi",
-    impact: "Creșterea ratei de lectură în rândul elevilor cu 35% în primele 6 luni de la implementare."
+    title: "Dinți frumoși, copii sănătoși",
+    status: "finalizat",
+    date: "Octombrie 2025",
+    description: "Program de educație pentru sănătate orală și prevenție dedicat copiilor din comună. Proiectul a oferit cunoștințe valoroase și a sporit încrederea micuților, contribuind direct la o comunitate mai sănătoasă și mai informată. Activitatea s-a desfășurat ca oră de clasă interactivă la Școala Gimnazială Moșnița Nouă.",
+    image: "/assets/proiect-sanatate.jpg",
+    budget: "1.200 EUR",
+    beneficiaries: "Elevii Școlii Gimnaziale Moșnița Nouă",
+    impact: "Formarea unor obiceiuri corecte de igienă dentară și distribuirea de kituri de îngrijire orală."
   },
   {
     id: "proiect-2",
-    title: "Parcul Ecologic al Prieteniei Rotary",
-    status: "active",
-    date: "Februarie 2026 - Prezent",
-    description: "Amenajarea unui nou spațiu verde destinat comunității din Moșnița Nouă. Proiectul include plantarea a peste 200 de arbori ornamentali și arbuști, instalarea de bănci inteligente cu încărcare solară și amenajarea unui loc de joacă modern realizat din materiale ecologice.",
-    image: "/assets/proiect-parc.jpg",
-    budget: "25.000 EUR",
-    beneficiaries: "Toți locuitorii comunei Moșnița Nouă",
-    impact: "Extinderea spațiilor verzi active și crearea unui loc sigur de recreere pentru familii."
+    title: "Drogurile distrug: fii informat!",
+    status: "finalizat",
+    date: "Noiembrie 2025",
+    description: "Clubul Rotary Moșnița Nouă, în parteneriat cu Școala Gimnazială Moșnița Nouă, IPJ Timiș – Biroul de Analiză și Prevenire a Criminalității și Biroul de Siguranță Școlară, a organizat o activitate esențială de prevenire a consumului de alcool și droguri în rândul elevilor. Copiii au testat ochelari speciali ce simulează efectele consumului, înțelegând practic cum sunt afectate echilibrul, coordonarea și capacitatea de reacție.",
+    image: "/assets/proiect-burse.jpg",
+    budget: "800 EUR",
+    beneficiaries: "Elevi din clasele gimnaziale",
+    impact: "Conștientizarea profundă a riscurilor asociate consumului de substanțe prin experimentare practică controlată."
   },
   {
     id: "proiect-3",
-    title: "Burse de Excelență pentru Tineri",
+    title: "Biblioteca Comunitară",
     status: "active",
-    date: "Septembrie 2025 - Iunie 2026 (Anual)",
-    description: "Program de susținere financiară și mentorat pentru 10 elevi de excepție din comunitate care provin din familii cu posibilități materiale reduse. Bursierii primesc sprijin lunar, rechizite și participă la sesiuni lunare de dezvoltare personală conduse de membrii clubului.",
-    image: "/assets/proiect-burse.jpg",
-    budget: "8.000 EUR (anual)",
-    beneficiaries: "10 elevi de gimnaziu și liceu",
-    impact: "Menținerea mediei de excelență (peste 9.50) pentru toți bursierii și prevenirea abandonului școlar."
+    date: "Ianuarie 2026 - Prezent",
+    description: "Proiect aflat în derulare ce presupune amplasarea de biblioteci stradale din lemn (căsuțe pentru cărți) în principalele zone de așteptare publice și stații de transport de pe raza comunei Moșnița Nouă. Scopul este de a oferi cetățenilor acces liber la volume diverse bazat pe principiul 'ia o carte, lasă o carte'.",
+    image: "/assets/proiect-biblioteca.jpg",
+    budget: "2.500 EUR",
+    beneficiaries: "Toți locuitorii comunei Moșnița Nouă",
+    impact: "Promovarea lecturii în mediul urban/rural local și încurajarea schimbului cultural gratuit."
   },
   {
     id: "proiect-4",
-    title: "Sănătate pentru Seniori - Cabinet Mobil",
+    title: "Educație sexuală și HPV pentru tineri",
     status: "finalizat",
-    date: "Octombrie - Decembrie 2025",
-    description: "Campanie de consultații medicale gratuite la domiciliu sau în format mobil pentru persoanele în vârstă și defavorizate din satele aparținătoare comunei. Am oferit consultații de cardiologie, oftalmologie, analize de bază (glicemie, tensiune) și am oferit ochelari de vedere gratuiți.",
+    date: "Martie 2026",
+    description: "Proiect de educație sanitară desfășurat alături de cadre medicale, unde am discutat deschis cu elevii de clasa a VIII-a despre adolescență, igienă corporală, emoții, respect reciproc, consimțământ, limite sănătoase și prevenția infecțiilor cu HPV. Abordarea interactivă și adaptată vârstei a confirmat nevoia acută de informare corectă.",
     image: "/assets/proiect-sanatate.jpg",
-    budget: "15.000 EUR",
-    beneficiaries: "180 de seniori din comună",
-    impact: "Depistarea precoce a afecțiunilor cardiovasculare la 24 de pacienți și distribuirea a 110 perechi de ochelari cu dioptrii corectate."
+    budget: "1.500 EUR",
+    beneficiaries: "Elevii claselor a VIII-a din comună",
+    impact: "Prevenție medicală timpurie, clarificarea miturilor din mediul online și promovarea deciziilor responsabile."
+  },
+  {
+    id: "proiect-5",
+    title: "Siguranță pe 2 roți: Responsabilitate și prevenție",
+    status: "finalizat",
+    date: "04 Iunie 2026",
+    description: "Clubul Rotary Moșnița Nouă, în parteneriat cu Inspectoratul de Poliție Județean Timiș - Serviciul Rutier, a adus în mijlocul a peste 100 de elevi proiectul de suflet dedicat conștientizării regulilor de circulație și siguranței în trafic. Activitatea a inclus lecții interactive de siguranță rutieră pentru bicicliști și utilizatorii de trotinete.",
+    image: "/assets/proiect-parc.jpg",
+    budget: "1.800 EUR",
+    beneficiaries: "Peste 100 de elevi de la Școala Gimnazială",
+    impact: "Reducerea riscurilor de accidente în rândul tinerilor participanți la trafic pe două roți."
+  },
+  {
+    id: "proiect-6",
+    title: "ECO HUB: Inovație prin natură, viitor prin comunitate",
+    status: "active",
+    date: "Mai 2026 - Prezent",
+    description: "Proiect pe termen lung în derulare, care vizează amenajarea unui nou parc public ecologic în satul Urseni, realizat în strânsă colaborare cu Primăria Moșnița Nouă. Va funcționa ca un hub verde pentru activități de educație de mediu, recreere și coeziune comunitară.",
+    image: "/assets/proiect-parc.jpg",
+    budget: "35.000 EUR",
+    beneficiaries: "Locuitorii satului Urseni și ai comunei învecinate",
+    impact: "Extinderea infrastructurii verzi, conservarea biodiversității locale și crearea unui spațiu comunitar activ."
+  },
+  {
+    id: "proiect-7",
+    title: "Balul Rotary Anual",
+    status: "active",
+    date: "Noiembrie 2026 (Planificat)",
+    description: "Pregătirea primului Bal de Caritate organizat de clubul nostru în anul 2026. Evenimentul are ca scop strângerea de fonduri de la parteneri și antreprenori pentru susținerea proiectelor locale prioritare din anul următor, în special pentru bursele școlare de excelență.",
+    image: "/assets/story-bg.jpg",
+    budget: "10.000 EUR (Țintă strângere)",
+    beneficiaries: "Copii talentați și grupuri vulnerabile din Moșnița Nouă",
+    impact: "Unificarea comunității de afaceri locale în jurul unor obiective sociale comune."
   }
 ];
 

@@ -9,19 +9,48 @@ export const Footer = {
             <div class="space-y-4">
               <a href="#/" class="flex items-center space-x-3 group">
                 <svg viewBox="0 0 100 100" class="w-10 h-10 text-rotary-gold" fill="currentColor">
-                  <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="4" fill="none" />
-                  <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="4" fill="none" />
+                  <defs>
+                    <!-- Paths for text centering (Radius 34) -->
+                    <!-- Top arc: left-to-right, curves up -->
+                    <path id="rotary-footer-top" d="M 16,50 A 34,34 0 0,1 84,50" fill="none" />
+                    <!-- Bottom arc: left-to-right, curves down -->
+                    <path id="rotary-footer-bottom" d="M 16,50 A 34,34 0 0,0 84,50" fill="none" />
+                  </defs>
+
+                  <!-- Blue Ring Background (Radius 30 to 40) -->
+                  <circle cx="50" cy="50" r="35" stroke="#17458F" stroke-width="10" fill="none" />
+
+                  <!-- Outer Gold Rim (Radius 40) -->
+                  <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  <!-- Inner Gold Rim (Radius 30) -->
+                  <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="1.5" fill="none" />
+
+                  <!-- 24 Cogs (Radius 40 to 44) -->
                   ${Array.from({ length: 24 }).map((_, i) => {
                     const angle = (i * 360) / 24;
-                    return `<rect x="47.5" y="2" width="5" height="8" rx="1" transform="rotate(${angle} 50 50)" />`;
+                    return `<rect x="48" y="2" width="4" height="6" rx="0.5" transform="rotate(${angle} 50 50)" />`;
                   }).join('')}
+
+                  <!-- Inner wheel structure (6 Spokes) (Radius 12 to 30) -->
                   ${Array.from({ length: 6 }).map((_, i) => {
                     const angle = (i * 360) / 6;
-                    return `<rect x="48.5" y="20" width="3" height="30" transform="rotate(${angle} 50 50)" />`;
+                    return `<rect x="48.5" y="12" width="3" height="18" transform="rotate(${angle} 50 50)" />`;
                   }).join('')}
+
+                  <!-- Center hub and keyway (Radius 12) -->
                   <circle cx="50" cy="50" r="12" fill="currentColor" />
                   <circle cx="50" cy="50" r="6" fill="#1A2B49" />
                   <rect x="48.5" y="44" width="3" height="6" fill="#1A2B49" />
+
+                  <!-- Top Inscribed Text "ROTARY" -->
+                  <text font-family="var(--font-sans), 'Arial Black', sans-serif" font-weight="900" font-size="7.5" fill="currentColor" letter-spacing="1.2">
+                    <textPath href="#rotary-footer-top" startOffset="50%" text-anchor="middle">ROTARY</textPath>
+                  </text>
+
+                  <!-- Bottom Inscribed Text "INTERNATIONAL" -->
+                  <text font-family="var(--font-sans), 'Arial Black', sans-serif" font-weight="900" font-size="4.8" fill="currentColor" letter-spacing="0.4">
+                    <textPath href="#rotary-footer-bottom" startOffset="50%" text-anchor="middle">INTERNATIONAL</textPath>
+                  </text>
                 </svg>
                 <div class="flex flex-col">
                   <span class="font-serif text-md font-bold tracking-widest text-white leading-none">ROTARY</span>
