@@ -62,12 +62,12 @@ export const projects = [
   {
     id: "proiect-7",
     title: "Balul Rotary Anual",
-    status: "active",
-    date: "Primăvara 2027",
-    description: "Pregătirea primului Bal de Caritate organizat de clubul nostru în primăvara anului 2027. Evenimentul are ca scop strângerea de fonduri de la parteneri și antreprenori pentru susținerea proiectelor locale prioritare din anul următor, în special pentru bursele școlare de excelență.",
+    status: "finalizat",
+    date: "Martie 2026",
+    description: "Primul Bal de Caritate organizat de Clubul Rotary Moșnița Nouă a fost un succes remarcabil, bucurându-se de prezența unor invitați de seamă și generoși, alături de prieteni rotarieni din alte cluburi. Evenimentul a avut ca scop strângerea de fonduri pentru proiectele noastre comunitare și alte inițiative civice esențiale.",
     image: "/assets/story-bg.jpg",
-    beneficiaries: "Copii talentați și grupuri vulnerabile din Moșnița Nouă",
-    impact: "Unificarea comunității de afaceri locale în jurul unor obiective sociale comune."
+    beneficiaries: "Comunitatea din Moșnița Nouă și beneficiarii proiectelor noastre",
+    impact: "Atragerea de fonduri esențiale pentru proiecte comunitare și consolidarea legăturilor de prietenie și colaborare între cluburi Rotary."
   }
 ];
 
