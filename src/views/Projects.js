@@ -53,7 +53,6 @@ export const ProjectsView = {
                   <div class="space-y-2">
                     <div class="flex items-center justify-between">
                       <span class="text-xs font-semibold text-slate-400">${proj.date}</span>
-                      <span class="text-xs font-bold text-rotary-blue bg-rotary-blue/5 px-2.5 py-0.5 rounded-md">${proj.budget}</span>
                     </div>
                     <h3 class="font-serif font-bold text-slate-900 text-xl leading-tight group-hover:text-rotary-blue transition-colors">
                       ${proj.title}
@@ -111,16 +110,12 @@ export const ProjectsView = {
           
           <!-- Modal Scrollable Content -->
           <div class="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5 flex-grow overflow-y-auto overscroll-contain">
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 border-b border-slate-100 pb-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 border-b border-slate-100 pb-4">
               <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
                 <span class="text-3xs font-bold text-slate-400 uppercase block mb-0.5">Data Acțiunii</span>
                 <span id="modal-project-date" class="text-xs font-semibold text-slate-800"></span>
               </div>
               <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                <span class="text-3xs font-bold text-slate-400 uppercase block mb-0.5">Buget Proiect</span>
-                <span id="modal-project-budget" class="text-xs font-bold text-rotary-blue"></span>
-              </div>
-              <div class="col-span-2 sm:col-span-1 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
                 <span class="text-3xs font-bold text-slate-400 uppercase block mb-0.5">Beneficiari</span>
                 <span id="modal-project-beneficiaries" class="text-xs font-semibold text-slate-800"></span>
               </div>
@@ -205,7 +200,6 @@ export const ProjectsView = {
       document.getElementById('modal-project-img').alt = proj.title;
       document.getElementById('modal-project-title').innerText = proj.title;
       document.getElementById('modal-project-date').innerText = proj.date;
-      document.getElementById('modal-project-budget').innerText = proj.budget;
       document.getElementById('modal-project-beneficiaries').innerText = proj.beneficiaries;
       document.getElementById('modal-project-desc').innerText = proj.description;
       document.getElementById('modal-project-impact').innerText = proj.impact;

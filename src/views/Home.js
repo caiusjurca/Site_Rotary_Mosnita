@@ -147,13 +147,8 @@ export const HomeView = {
                       ${proj.description}
                     </p>
                   </div>
-                  <div class="border-t border-slate-200 mt-6 pt-4 flex justify-between items-center text-xs text-slate-500">
-                    <div>
-                      <span class="font-bold text-slate-700">Buget:</span> ${proj.budget}
-                    </div>
-                    <div>
-                      <span class="font-bold text-slate-700">Beneficiari:</span> ${proj.beneficiaries}
-                    </div>
+                  <div class="border-t border-slate-200 mt-6 pt-4 text-xs text-slate-500">
+                    <span class="font-bold text-slate-700">Beneficiari:</span> ${proj.beneficiaries}
                   </div>
                 </div>
               </div>
