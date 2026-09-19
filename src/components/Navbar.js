@@ -8,11 +8,11 @@ export const Navbar = {
     return `
       <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center py-2 sm:py-2.5 min-h-[4.75rem] md:min-h-[5.25rem] lg:min-h-[5.75rem]">
+          <div class="flex justify-between items-center py-2 sm:py-2.5 min-h-[4.75rem] sm:min-h-[5.25rem] lg:min-h-[5.5rem] xl:min-h-[6.25rem]">
             
             <!-- Logo Section -->
             <a href="#/" class="flex items-center group py-1 flex-shrink-0">
-              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-11 sm:h-12 md:h-14 lg:h-16 xl:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-14 sm:h-16 md:h-16 lg:h-16 xl:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
             </a>
 
             <!-- Desktop Navigation Links (Visible on lg and above to prevent wrapping) -->

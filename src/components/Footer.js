@@ -9,7 +9,7 @@ export const Footer = {
             <div class="space-y-3">
               <a href="#/" class="inline-block group">
                 <div class="bg-gradient-to-br from-white via-slate-50 to-amber-50/50 p-3 rounded-xl inline-flex items-center shadow-md border border-rotary-gold/40 group-hover:border-rotary-gold transition-all duration-300">
-                  <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+                  <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
                 </div>
               </a>
               <p class="text-xs text-slate-400 leading-relaxed">
