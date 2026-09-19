@@ -200,37 +200,39 @@ export const HomeView = {
         </div>
       </section>
 
-      <!-- Donation Modal (Interactive Premium Feature) -->
-      <div id="donation-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+      <!-- Donation Modal (Interactive Viewport-Centered Feature) -->
+      <div id="donation-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
         <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" id="donation-modal-overlay"></div>
         
-        <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl overflow-hidden relative z-10 border border-slate-100 transform scale-95 transition-transform duration-300">
+        <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl overflow-hidden relative z-10 border border-slate-100 transform scale-95 transition-transform duration-200 m-auto">
           <div class="bg-rotary-blue p-6 text-white relative">
             <h3 class="font-serif text-xl font-bold">Susține Clubul Rotary</h3>
             <p class="text-xs text-blue-200 mt-1">Donațiile susțin 100% proiectele locale</p>
-            <button id="donation-modal-close" class="absolute top-4 right-4 text-white hover:text-rotary-gold transition-colors text-2xl font-bold focus:outline-none">&times;</button>
+            <button id="donation-modal-close" class="absolute top-4 right-4 text-white hover:text-rotary-gold transition-colors text-2xl font-bold focus:outline-none cursor-pointer">&times;</button>
           </div>
           <div class="p-6 space-y-4">
             <p class="text-sm text-slate-600">
               Orice contribuție financiară este direcționată în mod transparent către proiectele noastre active în educație, ecologizare sau sprijin medical.
             </p>
-            <div class="bg-slate-50 p-4 rounded-lg space-y-2 border border-slate-200 text-sm">
+            <div class="bg-slate-50 p-4 rounded-xl space-y-2.5 border border-slate-200 text-sm">
               <div>
                 <span class="text-xs font-bold text-slate-500 block">Beneficiar:</span>
-                <span class="font-semibold text-slate-800">ASOCIAȚIA CLUB ROTARY MOȘNIȚA NOUĂ</span>
+                <span class="font-semibold text-slate-800">ASOCIAȚIA ROTARY CLUB MOȘNIȚA NOUĂ</span>
               </div>
               <div>
-                <span class="text-xs font-bold text-slate-500 block">Cod Fiscal (CUI):</span>
-                <span class="font-semibold text-slate-800 font-mono">RO 1234567890</span>
+                <span class="text-xs font-bold text-slate-500 block">Cod Fiscal (CIF):</span>
+                <span class="font-semibold text-slate-800 font-mono">53083341</span>
               </div>
               <div>
                 <span class="text-xs font-bold text-slate-500 block">Cont Bancar (IBAN):</span>
-                <span id="iban-field" class="font-bold text-rotary-blue font-mono select-all">RO98 BTRL RONCRT 0123 4567 8901</span>
-                <button id="copy-iban-btn" class="text-xs text-slate-500 hover:text-rotary-blue underline ml-2 cursor-pointer">Copiază</button>
+                <div class="flex items-center justify-between mt-0.5">
+                  <span id="iban-field" class="font-bold text-rotary-blue font-mono select-all text-xs sm:text-sm">RO23BTRLRONCRT0DB9999001</span>
+                  <button id="copy-iban-btn" class="text-xs text-rotary-blue hover:text-rotary-azure font-semibold underline ml-2 cursor-pointer">Copiază</button>
+                </div>
               </div>
               <div>
                 <span class="text-xs font-bold text-slate-500 block">Banca:</span>
-                <span class="font-semibold text-slate-800">Banca Transilvania, Filiala Timișoara</span>
+                <span class="font-semibold text-slate-800">Banca Transilvania</span>
               </div>
             </div>
             <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
@@ -238,7 +240,7 @@ export const HomeView = {
             </div>
           </div>
           <div class="p-6 border-t border-slate-100 flex justify-end">
-            <button id="donation-modal-ok" class="btn-primary px-5 py-2.5 rounded-md font-bold text-xs">Am Înțeles</button>
+            <button id="donation-modal-ok" class="btn-primary px-5 py-2.5 rounded-md font-bold text-xs cursor-pointer">Am Înțeles</button>
           </div>
         </div>
       </div>
@@ -254,18 +256,36 @@ export const HomeView = {
     const copyBtn = document.getElementById('copy-iban-btn');
     const openBtn = document.getElementById('home-donate-btn');
 
+    // Dacă este în interiorul conținutului paginii, îl mutăm ca descendent direct al lui body
+    // pentru a garanta poziționarea fixă 100% centrată în viewport, indiferent unde s-a dat scroll
+    if (donationModal && donationModal.parentElement !== document.body) {
+      document.body.appendChild(donationModal);
+    }
+
     const showModal = () => {
+      if (!donationModal) return;
       donationModal.classList.remove('hidden');
-      donationModal.querySelector('.transform').classList.remove('scale-95');
-      donationModal.querySelector('.transform').classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        const card = donationModal.querySelector('.transform');
+        if (card) {
+          card.classList.remove('scale-95');
+          card.classList.add('scale-100');
+        }
+      });
     };
 
     const hideModal = () => {
-      donationModal.querySelector('.transform').classList.remove('scale-100');
-      donationModal.querySelector('.transform').classList.add('scale-95');
+      if (!donationModal) return;
+      const card = donationModal.querySelector('.transform');
+      if (card) {
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+      }
       setTimeout(() => {
         donationModal.classList.add('hidden');
-      }, 100);
+        document.body.style.overflow = '';
+      }, 150);
     };
 
     if (openBtn) openBtn.onclick = showModal;

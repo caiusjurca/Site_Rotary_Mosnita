@@ -8,11 +8,11 @@ export const Navbar = {
     return `
       <header class="sticky top-0 z-50 glass shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between h-20 items-center">
+          <div class="flex justify-between h-20 md:h-24 items-center">
             
             <!-- Logo Section -->
             <a href="#/" class="flex items-center group py-1">
-              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -25,6 +25,13 @@ export const Navbar = {
               
               <!-- Separator vertical -->
               <span class="h-6 w-px bg-slate-200 mx-2"></span>
+
+              <!-- Facebook link button -->
+              <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="p-2 text-[#1877F2] hover:bg-blue-50 rounded-lg transition-colors flex items-center justify-center mr-1" title="Urmărește-ne pe Facebook">
+                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
 
               <!-- User actions -->
               ${isLoggedIn ? `
@@ -73,6 +80,13 @@ export const Navbar = {
             <a href="#/documente-publice" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Documente Publice</a>
             <a href="#/contact" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Contact</a>
             
+            <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center space-x-2 px-3 py-2.5 rounded-md text-base font-semibold text-[#1877F2]">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Pagina de Facebook</span>
+            </a>
+
             <div class="border-t border-slate-100 my-2 pt-2"></div>
             
             ${isLoggedIn ? `

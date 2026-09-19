@@ -119,17 +119,69 @@ export const ContactView = {
                       <a href="tel:+40746080065" class="text-xs text-slate-700 font-semibold hover:text-rotary-blue block mt-1">+40 746 080 065</a>
                     </div>
                   </div>
+
+                  <!-- Facebook Social Contact -->
+                  <div class="flex items-start space-x-3.5">
+                    <div class="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#1877F2] flex-shrink-0">
+                      <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-3xs font-bold text-slate-400 uppercase block leading-none">Pagină Facebook</span>
+                      <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="text-xs text-rotary-blue font-bold hover:underline block mt-1 flex items-center space-x-1">
+                        <span>Rotary Club Moșnița Nouă</span>
+                        <svg class="w-3.5 h-3.5 ml-1 text-slate-400 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
               </div>
 
-              <!-- Caseta Hartă Interactivă -->
-              <div class="bg-white p-3 rounded-2xl border border-slate-100 shadow-xs">
-                <!-- Map Container -->
-                <div id="map" class="h-64 rounded-xl shadow-inner w-full z-10"></div>
-                <div class="p-3 text-center text-3xs text-slate-400">
-                  Coordonate sediu: Moșnița Veche, Strada Bisericii, nr. 45. Faceți zoom și trageți harta pentru navigare.
+              <!-- Caseta Hartă Google Maps cu Pin și Redirect -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs space-y-3">
+                <div class="flex items-center justify-between">
+                  <h4 class="font-serif text-sm font-bold text-slate-800">Locație Sediu pe Hartă</h4>
+                  <span class="text-3xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">Google Maps</span>
                 </div>
+
+                <!-- Google Maps Iframe Embed with accurate pin at Strada Bisericii 45, Moșnița Veche -->
+                <div class="w-full h-64 rounded-xl overflow-hidden shadow-inner border border-slate-200">
+                  <iframe 
+                    title="Harta Sediu Rotary Club Moșnița Nouă"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    loading="lazy" 
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://maps.google.com/maps?q=Strada+Bisericii+45,+Mosnita+Veche,+Timis&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                  </iframe>
+                </div>
+
+                <div class="text-3xs text-slate-500 text-center">
+                  Moșnița Veche, Strada Bisericii, nr. 45, jud. Timiș
+                </div>
+
+                <!-- Direct Google Maps Redirect Action Button -->
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Strada+Bisericii+45,+Mosnita+Veche,+Timis" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn-primary w-full py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 shadow-xs cursor-pointer hover:shadow-md"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-rotary-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>Deschide în Google Maps / Navigare</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
 
             </div>
@@ -151,38 +203,6 @@ export const ContactView = {
         const selectBox = document.getElementById('subject');
         if (selectBox) selectBox.value = 'volunteering';
       }
-    }
-
-    // Inițializare Hartă OpenStreetMap cu Leaflet.js
-    try {
-      const mapElement = document.getElementById('map');
-      if (mapElement) {
-        // Coordonate pentru Moșnița Veche, Strada Bisericii
-        const lat = 45.7285;
-        const lng = 21.3175;
-        
-        const map = L.map('map', {
-          center: [lat, lng],
-          zoom: 14,
-          scrollWheelZoom: false // previne scroll-ul accidental la navigarea pe pagina
-        });
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-        // Marker personalizat cu popup stilizat
-        const marker = L.marker([lat, lng]).addTo(map);
-        marker.bindPopup(`
-          <div class="text-xs leading-normal">
-            <b class="text-rotary-blue font-serif">Clubul Rotary Moșnița Nouă</b><br>
-            Moșnița Veche, Strada Bisericii, nr. 45<br>
-            <span class="text-slate-500 font-semibold">Sediu Oficial</span>
-          </div>
-        `).openPopup();
-      }
-    } catch (err) {
-      console.warn("Eroare la incarcarea hartii Leaflet:", err);
     }
 
     // Logica Formularului de Contact (Validări și Trimitere Mock)

@@ -8,13 +8,23 @@ export const Footer = {
             <!-- Column 1: Brand Info -->
             <div class="space-y-4">
               <a href="#/" class="inline-block group">
-                <div class="bg-white/95 px-3.5 py-2 rounded-xl inline-flex items-center shadow-sm group-hover:bg-white transition-colors">
-                  <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-10 md:h-12 w-auto object-contain" />
+                <div class="bg-gradient-to-br from-white via-slate-50 to-amber-50/50 p-3.5 sm:p-4 rounded-2xl inline-flex items-center shadow-lg border border-rotary-gold/40 group-hover:border-rotary-gold group-hover:shadow-xl transition-all duration-300">
+                  <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-14 sm:h-16 md:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
                 </div>
               </a>
-              <p class="text-sm text-slate-400 mt-4 leading-relaxed">
-                Organizație de lideri de afaceri și profesioniști reuniți pentru a oferi servicii umanitare, a încuraja standarde etice înalte și a promova pacea și buna înțelegere în comunitatea locală.
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                Fondat în 2025. Pilon stabil de sprijin civic și acțiune proactivă pentru ridicarea standardului de viață în comunitatea de peste 20.000 de locuitori din Moșnița Nouă. Motto: <em>„A servi mai presus de sine”</em>.
               </p>
+              
+              <!-- Social Media Link -->
+              <div class="pt-2 flex items-center space-x-3">
+                <span class="text-xs text-slate-400 font-semibold">Urmărește-ne:</span>
+                <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-[#1877F2] text-white flex items-center justify-center transition-colors shadow-sm border border-slate-700 hover:border-[#1877F2]" title="Rotary Club Moșnița Nouă pe Facebook">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
 
             <!-- Column 2: Quick Links -->
@@ -29,29 +39,29 @@ export const Footer = {
               </ul>
             </div>
 
-            <!-- Column 3: Rotary Values -->
+            <!-- Column 3: Rotary Values & Vision -->
             <div>
-              <h3 class="font-serif text-white font-bold text-lg mb-4">Valorile Noastre</h3>
-              <ul class="space-y-2 text-sm text-slate-400">
+              <h3 class="font-serif text-white font-bold text-lg mb-4">Viziune & Valori</h3>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
                 <li class="flex items-start space-x-2">
                   <span class="text-rotary-gold font-bold">1.</span>
-                  <span>Promovarea Păcii</span>
+                  <span><strong>Educație & Tineri:</strong> Burse școlare, prevenție și mentorat</span>
                 </li>
                 <li class="flex items-start space-x-2">
                   <span class="text-rotary-gold font-bold">2.</span>
-                  <span>Combaterea Bolilor</span>
+                  <span><strong>Sănătate Locală:</strong> Dotare unități medicale și campanii de prevenție</span>
                 </li>
                 <li class="flex items-start space-x-2">
                   <span class="text-rotary-gold font-bold">3.</span>
-                  <span>Sprijinirea Educației</span>
+                  <span><strong>Etică & Transparență:</strong> Busolă ghidată de Testul Celor 4 Întrebări</span>
                 </li>
                 <li class="flex items-start space-x-2">
                   <span class="text-rotary-gold font-bold">4.</span>
-                  <span>Dezvoltarea Economiilor Locale</span>
+                  <span><strong>Parteneriate Locale:</strong> Dezvoltare economică și ecologie durabilă</span>
                 </li>
                 <li class="flex items-start space-x-2">
                   <span class="text-rotary-gold font-bold">5.</span>
-                  <span>Protejarea Mediului Înconjurător</span>
+                  <span><strong>Comunitate Unită:</strong> Peste 20.000 de locuitori – fiecare contează</span>
                 </li>
               </ul>
             </div>

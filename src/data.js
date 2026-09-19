@@ -162,7 +162,7 @@ export const members = [
   {
     id: "membru-3",
     name: "Sinatovici Claudia",
-    role: "Președinte Ales (President-Elect)",
+    role: "Vicepreședinte",
     profession: "Jurnalist",
     email: "rotaryclubmosnitanoua@gmail.com",
     phone: "+40 746 080 065",
