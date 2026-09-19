@@ -84,17 +84,17 @@ export const publicDocuments = [
     title: "Statutul Oficial al Asociației Club Rotary Moșnița Nouă",
     type: "PDF",
     size: "1.2 MB",
-    date: "14 Martie 2024",
+    date: "14 Martie 2025",
     fileUrl: "/docs/statut_club.pdf",
     description: "Documentul juridic ce atestă înființarea, structura, scopul non-profit și modul de funcționare al asociației noastre."
   },
   {
     id: "pub-2",
-    title: "Raport de Activitate Comunitare - Anul Rotarian 2024-2025",
+    title: "Raport de Activitate Comunitare - Anul Rotarian 2025-2026",
     type: "PDF",
     size: "3.5 MB",
-    date: "01 Iulie 2025",
-    fileUrl: "/docs/raport_activitate_2024_2025.pdf",
+    date: "01 Iulie 2026",
+    fileUrl: "/docs/raport_activitate_2025_2026.pdf",
     description: "Raport detaliat care prezintă proiectele realizate, fondurile atrase și modul în care resursele financiare au fost alocate în comunitate."
   },
   {
@@ -141,73 +141,63 @@ export const privateDocuments = [
 export const members = [
   {
     id: "membru-1",
-    name: "Dr. Daniel Radu",
+    name: "Miclea Răzvan",
     role: "Președinte (2026-2027)",
-    profession: "Medic Stomatolog",
-    email: "daniel.radu@rotarymosnita.ro",
-    phone: "+40 722 123 456",
+    profession: "Inginer",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
-    joinedDate: "Martie 2024"
+    joinedDate: "2025"
   },
   {
     id: "membru-2",
-    name: "Elena Vasilescu",
-    role: "Secretar & Coordonator Proiecte",
-    profession: "Notar Public",
-    email: "elena.vasilescu@rotarymosnita.ro",
-    phone: "+40 733 987 654",
+    name: "Izgirean-Culcea Alina",
+    role: "Past-President (Fost Președinte)",
+    profession: "Inginer",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
-    joinedDate: "Aprilie 2024"
+    joinedDate: "2025"
   },
   {
     id: "membru-3",
-    name: "Mihai Ionescu",
-    role: "Trezorier",
-    profession: "Director Financiar / Expert Contabil",
-    email: "mihai.ionescu@rotarymosnita.ro",
-    phone: "+40 744 555 666",
+    name: "Sinatovici Claudia",
+    role: "Președinte Ales (President-Elect)",
+    profession: "Jurnalist",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
-    joinedDate: "Martie 2024"
+    joinedDate: "2025"
   },
   {
     id: "membru-4",
-    name: "Laura Marin",
-    role: "Vicepreședinte",
-    profession: "Antreprenor în IT & Software",
-    email: "laura.marin@rotarymosnita.ro",
-    phone: "+40 721 777 888",
+    name: "Jianu Cristian",
+    role: "Secretar",
+    profession: "Inginer",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
-    joinedDate: "Iulie 2024"
+    joinedDate: "2025"
   },
   {
     id: "membru-5",
-    name: "Andrei Dumitrescu",
-    role: "Past-President (Fondator)",
-    profession: "Profesor Universitar Dr. Chimist",
-    email: "andrei.dumitrescu@rotarymosnita.ro",
-    phone: "+40 725 111 222",
+    name: "Barbu Carmen",
+    role: "Trezorier",
+    profession: "Contabil",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
-    joinedDate: "Martie 2024"
+    joinedDate: "2025"
   },
   {
     id: "membru-6",
-    name: "Sorin Petrescu",
-    role: "Membru în Consiliul Director",
-    profession: "Arhitect & Urbanist",
-    email: "sorin.petrescu@rotarymosnita.ro",
-    phone: "+40 755 333 444",
+    name: "Nemeșan Dinu",
+    role: "Cenzor",
+    profession: "Economist",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
-    joinedDate: "Septembrie 2024"
-  },
-  {
-    id: "membru-7",
-    name: "Dr. Maria Cojocaru",
-    role: "Membru Activ",
-    profession: "Medic Primar Pediatru",
-    email: "maria.cojocaru@rotarymosnita.ro",
-    phone: "+40 728 888 999",
-    status: "Activ (Cotizație la zi)",
-    joinedDate: "Ianuarie 2025"
+    joinedDate: "2025"
   }
 ];
 
@@ -225,7 +215,7 @@ export const announcements = [
     title: "Termen Limită Plată Cotizație Semestrul II",
     date: "Până la 31 Iulie 2026",
     location: "Online / Contul Bancar al Clubului",
-    content: "Dragi colegi, vă reamintim că data limită pentru achitarea cotizației pentru al doilea semestru al anului rotarian în curs este 31 iulie. Vă rugăm să trimiteți confirmarea de plată către trezorier (Mihai Ionescu).",
+    content: "Dragi colegi, vă reamintim că data limită pentru achitarea cotizației pentru al doilea semestru al anului rotarian în curs este 31 iulie. Vă rugăm să trimiteți confirmarea de plată către trezorier (Carmen Barbu).",
     type: "important"
   },
   {

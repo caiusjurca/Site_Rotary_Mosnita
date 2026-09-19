@@ -1,8 +1,8 @@
 // Serviciu de autentificare mock pentru membrii clubului
 const MOCK_USER = {
-  email: "membru@rotarymosnita.ro",
+  email: "rotaryclubmosnitanoua@gmail.com",
   password: "Rotary2026!",
-  name: "Dr. Daniel Radu",
+  name: "Miclea Răzvan",
   role: "Președinte"
 };
 
@@ -11,7 +11,8 @@ export const authService = {
     return new Promise((resolve, reject) => {
       // Simulăm o întârziere mică de rețea pentru realism și UX premium (show spinner)
       setTimeout(() => {
-        if (email.toLowerCase().trim() === MOCK_USER.email.toLowerCase() && password === MOCK_USER.password) {
+        const inputEmail = email.toLowerCase().trim();
+        if ((inputEmail === MOCK_USER.email.toLowerCase() || inputEmail === "membru@rotarymosnita.ro") && password === MOCK_USER.password) {
           const userSession = {
             email: MOCK_USER.email,
             name: MOCK_USER.name,

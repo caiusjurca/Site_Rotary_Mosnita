@@ -75,10 +75,10 @@ export const HomeView = {
                 Uniți pentru a susține comunitatea din Moșnița Nouă
               </h2>
               <p class="text-slate-600 leading-relaxed text-md">
-                Clubul Rotary Moșnița Nouă a luat ființă din dorința de a aduce împreună profesioniști valoroși din comună și zonele limitrofe, care doresc să își folosească experiența, timpul și resursele în beneficiul comunității. 
+                Clubul Rotary Moșnița Nouă a luat ființă în anul <strong>2025</strong> din dorința de a aduce împreună profesioniști valoroși și lideri locali care doresc să își folosească experiența, timpul și resursele în beneficiul comunității. Într-o comunitate de peste 20.000 de locuitori, fiecare cetățean contează!
               </p>
               <p class="text-slate-600 leading-relaxed text-md">
-                Credem cu tărie că o comunitate puternică se clădește prin implicare constantă. De aceea, ne concentrăm proiectele pe educația copiilor, sprijinirea persoanelor vârstnice aflate în dificultate și protejarea mediului înconjurător prin acțiuni sustenabile de ecologizare și plantare.
+                Credem cu tărie că o comunitate puternică se clădește prin implicare constantă. De aceea, ne concentrăm acțiunile pe educația copiilor, sprijinirea sistemului sanitar local, implicare civică ghidată etic și parteneriate durabile de dezvoltare economică.
               </p>
               
               <!-- Four-Way Test (Mini Callout) -->

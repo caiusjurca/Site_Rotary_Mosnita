@@ -92,7 +92,7 @@ export const ContactView = {
                     </div>
                     <div>
                       <span class="text-3xs font-bold text-slate-400 uppercase block leading-none">Sediu Asociație</span>
-                      <span class="text-xs text-slate-700 font-semibold block mt-1">Calea Moșniței, Nr. 12, Moșnița Nouă, Timiș</span>
+                      <span class="text-xs text-slate-700 font-semibold block mt-1">Moșnița Veche, Strada Bisericii, nr. 45, 307287, Timiș</span>
                     </div>
                   </div>
 
@@ -104,7 +104,7 @@ export const ContactView = {
                     </div>
                     <div>
                       <span class="text-3xs font-bold text-slate-400 uppercase block leading-none">Adresă E-mail</span>
-                      <a href="mailto:contact@rotarymosnita.ro" class="text-xs text-rotary-blue font-bold hover:underline block mt-1">contact@rotarymosnita.ro</a>
+                      <a href="mailto:rotaryclubmosnitanoua@gmail.com" class="text-xs text-rotary-blue font-bold hover:underline block mt-1">rotaryclubmosnitanoua@gmail.com</a>
                     </div>
                   </div>
 
@@ -116,7 +116,7 @@ export const ContactView = {
                     </div>
                     <div>
                       <span class="text-3xs font-bold text-slate-400 uppercase block leading-none">Telefon</span>
-                      <a href="tel:+40722123456" class="text-xs text-slate-700 font-semibold hover:text-rotary-blue block mt-1">+40 722 123 456</a>
+                      <a href="tel:+40746080065" class="text-xs text-slate-700 font-semibold hover:text-rotary-blue block mt-1">+40 746 080 065</a>
                     </div>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export const ContactView = {
                 <!-- Map Container -->
                 <div id="map" class="h-64 rounded-xl shadow-inner w-full z-10"></div>
                 <div class="p-3 text-center text-3xs text-slate-400">
-                  Coordonate sediu: Moșnița Nouă, Timiș. Faceți zoom și trageți harta pentru navigare.
+                  Coordonate sediu: Moșnița Veche, Strada Bisericii, nr. 45. Faceți zoom și trageți harta pentru navigare.
                 </div>
               </div>
 
@@ -157,9 +157,9 @@ export const ContactView = {
     try {
       const mapElement = document.getElementById('map');
       if (mapElement) {
-        // Coordonate aproximative pentru Centrul Moșnița Nouă, Timiș
-        const lat = 45.7214;
-        const lng = 21.3116;
+        // Coordonate pentru Moșnița Veche, Strada Bisericii
+        const lat = 45.7285;
+        const lng = 21.3175;
         
         const map = L.map('map', {
           center: [lat, lng],
@@ -176,8 +176,8 @@ export const ContactView = {
         marker.bindPopup(`
           <div class="text-xs leading-normal">
             <b class="text-rotary-blue font-serif">Clubul Rotary Moșnița Nouă</b><br>
-            Calea Moșniței, Nr. 12<br>
-            <span class="text-slate-500 font-semibold">Sediu Întruniri</span>
+            Moșnița Veche, Strada Bisericii, nr. 45<br>
+            <span class="text-slate-500 font-semibold">Sediu Oficial</span>
           </div>
         `).openPopup();
       }

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Path for curved text "MOȘNIȚA NOUĂ" along bottom arc -->
+    <path id="fav-bottom-arc" d="M 16,64 A 48,48 0 0,0 112,64" fill="none" />
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A4A94" />
+      <stop offset="100%" stop-color="#0E2F64" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Circle -->
+  <circle cx="64" cy="64" r="62" fill="url(#blueGrad)" />
+  <circle cx="64" cy="64" r="59" fill="none" stroke="#F7A81B" stroke-width="2.5" />
+
+  <!-- Rotary Wheel (Centered at x=64, y=48, radius ~34) -->
+  <g transform="translate(64, 48) scale(0.68)" filter="url(#dropShadow)">
+    <!-- Blue Ring Background (Radius 30 to 40) -->
+    <circle cx="0" cy="0" r="35" stroke="#17458F" stroke-width="10" fill="none" />
+
+    <!-- Outer and Inner Gold Rims -->
+    <circle cx="0" cy="0" r="40" stroke="#F7A81B" stroke-width="1.8" fill="none" />
+    <circle cx="0" cy="0" r="30" stroke="#F7A81B" stroke-width="1.8" fill="none" />
+
+    <!-- 24 Cogs -->
+    <g fill="#F7A81B">
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(0)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(15)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(30)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(45)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(60)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(75)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(90)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(105)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(120)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(135)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(150)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(165)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(180)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(195)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(210)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(225)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(240)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(255)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(270)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(285)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(300)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(315)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(330)" />
+      <rect x="-2" y="-46" width="4" height="6.5" rx="0.5" transform="rotate(345)" />
+    </g>
+
+    <!-- 6 Spokes -->
+    <g fill="#F7A81B">
+      <rect x="-1.8" y="-30" width="3.6" height="18" transform="rotate(0)" />
+      <rect x="-1.8" y="-30" width="3.6" height="18" transform="rotate(60)" />
+      <rect x="-1.8" y="-30" width="3.6" height="18" transform="rotate(120)" />
+      <rect x="-1.8" y="-30" width="3.6" height="18" transform="rotate(180)" />
+      <rect x="-1.8" y="-30" width="3.6" height="18" transform="rotate(240)" />
+      <rect x="-1.8" y="-30" width="3.6" height="18" transform="rotate(300)" />
+    </g>
+
+    <!-- Center Hub & Keyway -->
+    <circle cx="0" cy="0" r="12" fill="#F7A81B" />
+    <circle cx="0" cy="0" r="6" fill="#17458F" />
+    <rect x="-1.5" y="-6" width="3" height="6" fill="#17458F" />
+
+    <!-- Inscribed ROTARY on top -->
+    <path id="wheel-top-text" d="M -34,0 A 34,34 0 0,1 34,0" fill="none" />
+    <text font-family="'Open Sans', 'Arial Black', sans-serif" font-weight="900" font-size="7.5" fill="#F7A81B" letter-spacing="1.2">
+      <textPath href="#wheel-top-text" startOffset="50%" text-anchor="middle">ROTARY</textPath>
+    </text>
+
+    <!-- Inscribed INTERNATIONAL on bottom -->
+    <path id="wheel-bottom-text" d="M -34,0 A 34,34 0 0,0 34,0" fill="none" />
+    <text font-family="'Open Sans', 'Arial Black', sans-serif" font-weight="900" font-size="4.8" fill="#F7A81B" letter-spacing="0.4">
+      <textPath href="#wheel-bottom-text" startOffset="50%" text-anchor="middle">INTERNATIONAL</textPath>
+    </text>
+  </g>
+
+  <!-- Bottom Curved Inscription: MOȘNIȚA NOUĂ -->
+  <text font-family="'Open Sans', 'Montserrat', sans-serif" font-weight="900" font-size="11.5" fill="#F7A81B" letter-spacing="2">
+    <textPath href="#fav-bottom-arc" startOffset="50%" text-anchor="middle">MOȘNIȚA NOUĂ</textPath>
+  </text>
+</svg>
