@@ -197,16 +197,16 @@ export const Navbar = {
     const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
     if (mobileLogoutBtn) mobileLogoutBtn.onclick = handleLogout;
 
-    // Efect de micșorare navbar la scroll
+    // Efect de adâncire umbră navbar la scroll (fără a forța înălțimi fixe care taie chenarul)
     window.onscroll = () => {
       const header = document.querySelector('header');
       if (header) {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-          header.classList.add('h-16');
-          header.classList.remove('h-20');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          header.classList.add('shadow-md');
+          header.classList.remove('shadow-xs');
         } else {
-          header.classList.add('h-20');
-          header.classList.remove('h-16');
+          header.classList.add('shadow-xs');
+          header.classList.remove('shadow-md');
         }
       }
     };
