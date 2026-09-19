@@ -26,12 +26,6 @@ export const Footer = {
                 <li><a href="#/proiecte" class="hover:text-rotary-gold transition-colors block">Proiecte Comunitare</a></li>
                 <li><a href="#/documente-publice" class="hover:text-rotary-gold transition-colors block">Documente Publice</a></li>
                 <li><a href="#/contact" class="hover:text-rotary-gold transition-colors block">Contact</a></li>
-                <li class="pt-1">
-                  <button class="open-donate-modal-btn text-rotary-gold hover:text-amber-400 font-bold flex items-center space-x-1 cursor-pointer transition-colors">
-                    <svg class="h-3 w-3 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                    <span>Donează pentru Proiecte</span>
-                  </button>
-                </li>
               </ul>
             </div>
 

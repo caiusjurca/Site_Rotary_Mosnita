@@ -6,73 +6,66 @@ export const Navbar = {
     const currentUser = authService.getCurrentUser();
 
     return `
-      <header class="sticky top-0 z-50 glass shadow-sm transition-all duration-300">
+      <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between h-24 md:h-28 lg:h-32 items-center">
+          <div class="flex justify-between items-center py-2 sm:py-2.5 min-h-[4.75rem] md:min-h-[5.25rem] lg:min-h-[5.75rem]">
             
-            <!-- Logo Section (Larger, High Impact) -->
-            <a href="#/" class="flex items-center group py-2">
-              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+            <!-- Logo Section -->
+            <a href="#/" class="flex items-center group py-1 flex-shrink-0">
+              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-11 sm:h-12 md:h-14 lg:h-16 xl:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
             </a>
 
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex space-x-1 lg:space-x-2 items-center">
-              <a href="#/" class="nav-link px-3 py-2 rounded-md text-sm font-semibold transition-colors">Acasă</a>
-              <a href="#/despre-noi" class="nav-link px-3 py-2 rounded-md text-sm font-semibold transition-colors">Despre Noi</a>
-              <a href="#/proiecte" class="nav-link px-3 py-2 rounded-md text-sm font-semibold transition-colors">Proiecte</a>
-              <a href="#/documente-publice" class="nav-link px-3 py-2 rounded-md text-sm font-semibold transition-colors">Documente Publice</a>
-              <a href="#/contact" class="nav-link px-3 py-2 rounded-md text-sm font-semibold transition-colors">Contact</a>
+            <!-- Desktop Navigation Links (Visible on lg and above to prevent wrapping) -->
+            <nav class="hidden lg:flex space-x-1 xl:space-x-2 items-center flex-nowrap">
+              <a href="#/" class="nav-link whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-semibold transition-colors">Acasă</a>
+              <a href="#/despre-noi" class="nav-link whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-semibold transition-colors">Despre Noi</a>
+              <a href="#/proiecte" class="nav-link whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-semibold transition-colors">Proiecte</a>
+              <a href="#/documente-publice" class="nav-link whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-semibold transition-colors">Documente Publice</a>
+              <a href="#/contact" class="nav-link whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-semibold transition-colors">Contact</a>
               
               <!-- Separator vertical -->
-              <span class="h-6 w-px bg-slate-200 mx-2"></span>
-
-              <!-- Buton Donează (Vizibil, Accent Gold) -->
-              <button class="open-donate-modal-btn flex items-center space-x-1.5 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold btn-accent shadow-xs hover:shadow-md transition-all cursor-pointer mr-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span>Donează</span>
-              </button>
+              <span class="h-6 w-px bg-slate-200 mx-1.5 xl:mx-2 flex-shrink-0"></span>
 
               <!-- User actions / Portal Membri -->
               ${isLoggedIn ? `
-                <div class="flex items-center space-x-2">
-                  <a href="#/dashboard" class="flex items-center space-x-1.5 px-3.5 py-2 rounded-md text-sm font-bold bg-rotary-blue/10 text-rotary-blue hover:bg-rotary-blue/20 transition-all border border-rotary-blue/10">
+                <div class="flex items-center space-x-1.5 xl:space-x-2 flex-shrink-0">
+                  <a href="#/dashboard" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs xl:text-sm font-bold bg-rotary-blue/10 text-rotary-blue hover:bg-rotary-blue/20 transition-all border border-rotary-blue/10 whitespace-nowrap">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                     <span>Membri</span>
                   </a>
-                  <button id="logout-btn" class="px-3 py-2 rounded-md text-sm font-semibold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer">
+                  <button id="logout-btn" class="px-2.5 xl:px-3 py-1.5 rounded-md text-xs xl:text-sm font-semibold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer whitespace-nowrap">
                     Deconectare
                   </button>
                 </div>
               ` : `
-                <a href="#/login" class="flex items-center space-x-1 px-4 py-2 rounded-md text-sm font-bold btn-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <a href="#/login" class="flex items-center space-x-1 px-3 py-1.5 rounded-md text-xs xl:text-sm font-bold btn-primary whitespace-nowrap flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                   </svg>
                   <span>Portal Membri</span>
                 </a>
               `}
 
-              <!-- Facebook link button (Mutat la FINAL) -->
-              <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="p-2 text-[#1877F2] hover:bg-blue-50 rounded-lg transition-colors flex items-center justify-center ml-1" title="Urmărește-ne pe Facebook">
+              <!-- Buton Donează (Subtil, Elegant, mutat la final inainte de Facebook) -->
+              <button class="open-donate-modal-btn flex items-center space-x-1 px-2.5 xl:px-3 py-1.5 rounded-full text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-rotary-gold hover:text-white border border-amber-300/80 hover:border-rotary-gold transition-all duration-200 cursor-pointer shadow-2xs whitespace-nowrap ml-1 flex-shrink-0" title="Susține proiectele prin donație">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current text-rotary-gold" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Donează</span>
+              </button>
+
+              <!-- Facebook link button (La FINAL) -->
+              <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="p-1.5 xl:p-2 text-[#1877F2] hover:bg-blue-50 rounded-lg transition-colors flex items-center justify-center flex-shrink-0" title="Urmărește-ne pe Facebook">
                 <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
             </nav>
 
-            <!-- Mobile Bar Actions -->
-            <div class="flex items-center space-x-2 md:hidden">
-              <button class="open-donate-modal-btn px-3 py-1.5 rounded-md text-xs font-bold btn-accent shadow-xs flex items-center space-x-1 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span>Donează</span>
-              </button>
-
+            <!-- Mobile Bar Menu Toggle -->
+            <div class="flex items-center space-x-2 lg:hidden">
               <button id="mobile-menu-toggle" class="p-2 rounded-md text-slate-600 hover:text-rotary-blue hover:bg-slate-100 focus:outline-none transition-colors">
                 <svg id="menu-icon-closed" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -87,16 +80,8 @@ export const Navbar = {
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-slate-100 shadow-md">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 border-b border-slate-100 shadow-md">
           <div class="px-3 pt-3 pb-4 space-y-2">
-            <!-- Mobile Donează CTA Button -->
-            <button class="open-donate-modal-btn w-full text-center px-4 py-2.5 rounded-lg text-sm font-bold btn-accent shadow-xs flex items-center justify-center space-x-2 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              <span>Susține Proiectele prin Donație</span>
-            </button>
-
             <a href="#/" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Acasă</a>
             <a href="#/despre-noi" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Despre Noi</a>
             <a href="#/proiecte" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Proiecte</a>
@@ -119,13 +104,20 @@ export const Navbar = {
               </a>
             `}
 
-            <!-- Facebook Link la finalul meniului mobil -->
-            <div class="border-t border-slate-100 pt-2">
-              <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center space-x-2 px-3 py-2.5 rounded-md text-base font-semibold text-[#1877F2]">
+            <!-- Donează & Facebook la finalul meniului mobil -->
+            <div class="border-t border-slate-100 pt-3 flex items-center justify-between px-3">
+              <button class="open-donate-modal-btn flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-rotary-gold hover:text-white border border-amber-300/80 transition-all cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current text-rotary-gold" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Donează</span>
+              </button>
+
+              <a href="https://www.facebook.com/profile.php?id=61583636502555" target="_blank" rel="noopener noreferrer" class="p-2 text-[#1877F2] hover:bg-blue-50 rounded-lg transition-colors flex items-center space-x-1.5 text-xs font-semibold" title="Facebook">
                 <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
-                <span>Pagina de Facebook</span>
+                <span>Facebook</span>
               </a>
             </div>
           </div>

@@ -34,17 +34,11 @@ export const HomeView = {
               Suntem o comunitate de lideri, profesioniști și prieteni dedicați servirii aproapelui. Ghidați de motto-ul <span class="italic font-semibold text-white">„Serviciu mai presus de sine”</span>, ne unim eforturile pentru a susține educația, sănătatea și dezvoltarea comunității noastre locale.
             </p>
             
-            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-              <button class="open-donate-modal-btn btn-accent px-8 py-4 rounded-md font-bold text-center shadow-lg transition-transform text-sm tracking-wide uppercase flex items-center justify-center space-x-2 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span>Donează pentru Comunitate</span>
-              </button>
-              <a href="#/proiecte" class="px-7 py-4 rounded-md font-bold text-center bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all text-sm tracking-wide uppercase">
-                Vezi Proiectele
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="#/proiecte" class="btn-accent px-8 py-4 rounded-md font-bold text-center shadow-lg transition-transform text-sm tracking-wide uppercase">
+                Vezi Proiectele Noastre
               </a>
-              <a href="#/contact" class="px-7 py-4 rounded-md font-bold text-center border-2 border-white/80 text-white hover:bg-white hover:text-rotary-dark transition-all duration-300 text-sm tracking-wide uppercase">
+              <a href="#/contact" class="px-8 py-4 rounded-md font-bold text-center border-2 border-white text-white hover:bg-white hover:text-rotary-dark transition-all duration-300 text-sm tracking-wide uppercase">
                 Alătură-te ca Voluntar
               </a>
             </div>
@@ -121,17 +115,12 @@ export const HomeView = {
                 Proiecte Recente
               </h2>
             </div>
-            <div class="mt-4 md:mt-0 flex items-center space-x-3">
-              <a href="#/proiecte" class="btn-primary px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider">
-                Vezi Toate Proiectele
-              </a>
-              <button class="open-donate-modal-btn btn-accent px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center space-x-1.5 cursor-pointer shadow-xs">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span>Donează</span>
-              </button>
-            </div>
+            <a href="#/proiecte" class="mt-4 md:mt-0 text-rotary-blue font-bold hover:text-rotary-gold transition-colors inline-flex items-center space-x-1 text-sm">
+              <span>Vezi toate proiectele</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
 
           <!-- Projects Grid -->
