@@ -75,7 +75,13 @@ export const ProjectsView = {
                     </div>
                   </div>
 
-                  <div class="pt-2 flex justify-end">
+                  <div class="pt-2 flex items-center justify-between">
+                    <button class="open-donate-modal-btn text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center space-x-1 cursor-pointer py-1" title="Susține acest tip de proiect">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                      </svg>
+                      <span>Susține</span>
+                    </button>
                     <button class="project-details-btn text-xs font-bold text-rotary-blue hover:text-rotary-gold transition-colors flex items-center space-x-1 cursor-pointer" data-id="${proj.id}">
                       <span>Citește detalii</span>
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,6 +93,21 @@ export const ProjectsView = {
 
               </div>
             `).join('')}
+          </div>
+
+          <!-- Inspiring Donation Callout Banner on Projects Page -->
+          <div class="mt-14 bg-gradient-to-r from-rotary-blue via-rotary-blue to-rotary-dark text-white rounded-3xl p-8 sm:p-10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 border border-rotary-gold/20">
+            <div class="space-y-2 text-center md:text-left">
+              <span class="inline-block text-xs font-bold text-rotary-gold uppercase tracking-wider bg-rotary-gold/10 border border-rotary-gold/20 px-3 py-1 rounded-full">Solidaritate Activă</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold">Susține proiectele comunitare din Moșnița Nouă</h3>
+              <p class="text-xs sm:text-sm text-slate-200 max-w-xl">Fiecare donație aduce un sprijin concret în educația școlară, parcuri ecologice și acțiuni sanitare locale.</p>
+            </div>
+            <button class="open-donate-modal-btn btn-accent px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center space-x-2 shadow-md cursor-pointer flex-shrink-0 hover:scale-105 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span>Donează pentru Proiecte</span>
+            </button>
           </div>
 
         </div>
@@ -109,9 +130,9 @@ export const ProjectsView = {
           </div>
           
           <div class="p-6 sm:p-8 space-y-6">
-            <div class="grid grid-cols-3 gap-4 border-b border-slate-100 pb-5 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 border-b border-slate-100 pb-4">
               <div>
-                <span class="text-3xs font-bold text-slate-400 uppercase block">Perioadă</span>
+                <span class="text-3xs font-bold text-slate-400 uppercase block">Data Acțiunii</span>
                 <span id="modal-project-date" class="text-xs font-semibold text-slate-800"></span>
               </div>
               <div>
@@ -136,8 +157,14 @@ export const ProjectsView = {
               </div>
             </div>
           </div>
-          <div class="p-6 border-t border-slate-100 flex justify-end">
-            <button id="project-modal-ok" class="btn-primary px-6 py-2.5 rounded-md font-bold text-xs">Închide</button>
+          <div class="p-6 border-t border-slate-100 flex items-center justify-between">
+            <button class="open-donate-modal-btn btn-accent px-5 py-2.5 rounded-lg font-bold text-xs flex items-center space-x-1.5 cursor-pointer shadow-xs hover:shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span>Susține Proiectul</span>
+            </button>
+            <button id="project-modal-ok" class="btn-primary px-6 py-2.5 rounded-lg font-bold text-xs cursor-pointer">Închide</button>
           </div>
         </div>
       </div>

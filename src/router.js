@@ -9,6 +9,7 @@ import { DashboardView } from './views/Dashboard.js';
 
 import { Navbar } from './components/Navbar.js';
 import { Footer } from './components/Footer.js';
+import { DonationModal } from './components/DonationModal.js';
 
 const routes = {
   '/': { view: HomeView, title: 'Acasă | Rotary Club Moșnița Nouă', desc: 'Bun venit la Rotary Club Moșnița Nouă. Descoperă activitatea noastra, proiectele comunitare și cum te poți alătura ca voluntar.' },
@@ -101,11 +102,13 @@ export class Router {
       <div id="navbar-container"></div>
       <main id="app-content" class="flex-grow opacity-0 fade-in"></main>
       <div id="footer-container"></div>
+      <div id="donation-modal-container"></div>
     `;
 
-    // Randare Navbar & Footer
+    // Randare Navbar, Footer & Modal Donație Global
     document.getElementById('navbar-container').innerHTML = Navbar.render();
     document.getElementById('footer-container').innerHTML = Footer.render();
+    document.getElementById('donation-modal-container').innerHTML = DonationModal.render();
 
     // Randare View Activ
     const appContent = document.getElementById('app-content');
@@ -118,5 +121,6 @@ export class Router {
     Navbar.mount();
     Footer.mount();
     routeConfig.view.mount();
+    DonationModal.mount();
   }
 }

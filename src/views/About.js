@@ -71,11 +71,22 @@ export const AboutView = {
               </div>
 
               <!-- Caseta Notă distinctivă -->
-              <div class="bg-rotary-dark text-white p-6 rounded-2xl shadow-sm space-y-3">
+              <div class="bg-rotary-dark text-white p-6 rounded-2xl shadow-sm space-y-4">
                 <h4 class="font-serif font-bold text-rotary-gold text-base">Rotary nu este doar despre a dona bani!</h4>
                 <p class="text-slate-300 text-xs leading-relaxed">
                   Rotary este în primul rând despre a dona <strong>timp, expertiză profesională și angajament personal</strong>. Suntem o mână de sprijin directă oferită comunității noastre, lucrând strâns alături de administrație, școli și cetățeni.
                 </p>
+                <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
+                  <button class="open-donate-modal-btn btn-accent px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-1.5 cursor-pointer shadow-xs hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <span>Susține prin Donație</span>
+                  </button>
+                  <a href="#/contact?subject=volunteering" class="px-4 py-2.5 rounded-xl text-xs font-bold border border-white/30 text-white hover:bg-white/10 flex items-center justify-center transition-colors text-center">
+                    Devino Voluntar
+                  </a>
+                </div>
               </div>
             </div>
 
