@@ -1,9 +1,11 @@
-import { members } from '../data.js';
+import { boardMembers, members } from '../data.js';
 
 export const AboutView = {
   render() {
     // Toți cei 6 membri ai Consiliului Director (2026-2027)
-    const leaders = members;
+    const leaders = boardMembers;
+    // Toți cei 21 de membri ai clubului
+    const allMembers = members;
 
     return `
       <!-- Header Secțiune -->
@@ -324,12 +326,195 @@ export const AboutView = {
             `).join('')}
           </div>
 
+          <!-- Secțiune Elegantă: Tabloul Membrilor Clubului -->
+          <div class="mt-20 pt-16 border-t border-slate-200">
+            
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+              <div class="flex justify-center items-center space-x-2">
+                <span class="h-1 w-8 bg-rotary-gold rounded-full"></span>
+                <span class="text-rotary-gold font-bold text-xs uppercase tracking-wider">Comunitatea Noastră</span>
+                <span class="h-1 w-8 bg-rotary-gold rounded-full"></span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-slate-800">
+                Membrii Clubului Rotary Moșnița Nouă
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm">
+                21 de membri dedicați, uniți de valorile rotariene și dorința de a genera un impact durabil în comunitate.
+              </p>
+            </div>
+
+            <!-- Bara de Filtrare și Căutare Rapidă -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs">
+              
+              <!-- Butoane Filtre Rapide -->
+              <div class="flex items-center space-x-1.5 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+                <button 
+                  type="button" 
+                  data-filter="all" 
+                  class="member-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-rotary-blue text-white shadow-xs cursor-pointer"
+                >
+                  Toți Membrii (21)
+                </button>
+                <button 
+                  type="button" 
+                  data-filter="board" 
+                  class="member-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 cursor-pointer"
+                >
+                  Consiliul Director (6)
+                </button>
+                <button 
+                  type="button" 
+                  data-filter="general" 
+                  class="member-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 cursor-pointer"
+                >
+                  Membri (15)
+                </button>
+              </div>
+
+              <!-- Căutare după Nume -->
+              <div class="relative w-full sm:w-64">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </span>
+                <input 
+                  type="text" 
+                  id="search-members-input" 
+                  placeholder="Caută membru după nume..." 
+                  class="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rotary-blue/20 focus:border-rotary-blue"
+                />
+              </div>
+
+            </div>
+
+            <!-- Grid-ul Elegant cu Membrii Clubului -->
+            <div id="members-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              ${allMembers.map(member => {
+                const initials = member.name
+                  .split(/[\s-]+/)
+                  .filter(Boolean)
+                  .map(part => part[0])
+                  .join('')
+                  .toUpperCase()
+                  .slice(0, 3);
+                
+                const isBoard = member.isBoard;
+                
+                return `
+                  <div 
+                    class="member-card bg-white rounded-xl border border-slate-200/80 p-4 shadow-xs hover:shadow-md hover:border-rotary-blue/30 transition-all duration-200 flex items-center space-x-3.5 group"
+                    data-type="${isBoard ? 'board' : 'general'}"
+                    data-name="${member.name.toLowerCase()}"
+                  >
+                    <!-- Avatar Monogramă -->
+                    <div class="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-xs tracking-wider shadow-xs transition-transform group-hover:scale-105 ${
+                      isBoard 
+                        ? 'bg-gradient-to-tr from-rotary-blue to-rotary-dark text-rotary-gold border-2 border-rotary-gold/30' 
+                        : 'bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-rotary-blue group-hover:text-white group-hover:border-rotary-blue'
+                    }">
+                      ${initials}
+                    </div>
+
+                    <!-- Detalii Membru -->
+                    <div class="min-w-0 flex-1">
+                      <h4 class="font-serif font-bold text-slate-800 text-sm group-hover:text-rotary-blue transition-colors truncate">
+                        ${member.name}
+                      </h4>
+                      
+                      <div class="mt-1 flex items-center space-x-1.5 flex-wrap gap-y-1">
+                        ${isBoard ? `
+                          <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-3xs font-bold bg-amber-500/10 text-amber-900 border border-amber-500/20">
+                            <span class="text-rotary-gold">⭐</span>
+                            <span class="truncate">${member.role.split('(')[0].trim()}</span>
+                          </span>
+                        ` : `
+                          <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-3xs font-semibold bg-slate-100 text-slate-600 border border-slate-200/60">
+                            <span>Membru</span>
+                          </span>
+                        `}
+                        <span class="text-3xs text-slate-400">• Moșnița Nouă</span>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+
+            <!-- Mesaj Căutare Fără Rezultate -->
+            <div id="no-members-found" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200/80 mt-4">
+              <svg class="h-8 w-8 text-slate-300 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="text-slate-500 text-xs font-semibold">Niciun membru nu corespunde termenului căutat.</p>
+            </div>
+
+          </div>
+
         </div>
       </section>
     `;
   },
 
   mount() {
-    // No dynamic listeners needed for about view
+    const filterBtns = document.querySelectorAll('.member-filter-btn');
+    const searchInput = document.getElementById('search-members-input');
+    const memberCards = document.querySelectorAll('.member-card');
+    const noResults = document.getElementById('no-members-found');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function updateList() {
+      let visibleCount = 0;
+      memberCards.forEach(card => {
+        const type = card.getAttribute('data-type');
+        const name = card.getAttribute('data-name') || '';
+
+        const matchesFilter = (currentFilter === 'all') ||
+                              (currentFilter === 'board' && type === 'board') ||
+                              (currentFilter === 'general' && type === 'general');
+
+        const matchesSearch = !searchQuery || name.includes(searchQuery);
+
+        if (matchesFilter && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    if (filterBtns) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-rotary-blue', 'text-white', 'shadow-xs');
+            b.classList.add('text-slate-600', 'hover:bg-slate-100');
+          });
+          btn.classList.add('active', 'bg-rotary-blue', 'text-white', 'shadow-xs');
+          btn.classList.remove('text-slate-600', 'hover:bg-slate-100');
+
+          currentFilter = btn.getAttribute('data-filter') || 'all';
+          updateList();
+        });
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = (e.target.value || '').toLowerCase().trim();
+        updateList();
+      });
+    }
   }
 };

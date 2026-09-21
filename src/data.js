@@ -133,49 +133,21 @@ export const privateDocuments = [
 
 export const members = [
   {
-    id: "membru-1",
-    name: "Miclea Răzvan",
-    role: "Președinte (2026-2027)",
-    profession: "Inginer",
+    id: "membru-balta-relu",
+    name: "Baltă Relu",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
     email: "rotaryclubmosnitanoua@gmail.com",
     phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
     joinedDate: "2025"
   },
   {
-    id: "membru-2",
-    name: "Izgirean-Culcea Alina",
-    role: "Past-President (Fost Președinte)",
-    profession: "Inginer",
-    email: "rotaryclubmosnitanoua@gmail.com",
-    phone: "+40 746 080 065",
-    status: "Activ (Cotizație la zi)",
-    joinedDate: "2025"
-  },
-  {
-    id: "membru-3",
-    name: "Sinatovici Claudia",
-    role: "Vicepreședinte",
-    profession: "Jurnalist",
-    email: "rotaryclubmosnitanoua@gmail.com",
-    phone: "+40 746 080 065",
-    status: "Activ (Cotizație la zi)",
-    joinedDate: "2025"
-  },
-  {
-    id: "membru-4",
-    name: "Jianu Cristian",
-    role: "Secretar",
-    profession: "Inginer",
-    email: "rotaryclubmosnitanoua@gmail.com",
-    phone: "+40 746 080 065",
-    status: "Activ (Cotizație la zi)",
-    joinedDate: "2025"
-  },
-  {
-    id: "membru-5",
+    id: "membru-barbu-carmen",
     name: "Barbu Carmen",
     role: "Trezorier",
+    isBoard: true,
     profession: "Contabil",
     email: "rotaryclubmosnitanoua@gmail.com",
     phone: "+40 746 080 065",
@@ -183,15 +155,223 @@ export const members = [
     joinedDate: "2025"
   },
   {
-    id: "membru-6",
+    id: "membru-boc-florin",
+    name: "Boc Florin",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-butean-alexandra",
+    name: "Butean Alexandra",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-cocosila-cristian",
+    name: "Cocoșilă Cristian",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-doia-ioan",
+    name: "Doia Ioan",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-farcas-paul",
+    name: "Fărcaș Paul",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-herac-gheorghe",
+    name: "Herac Gheorghe",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-izgirean-culcea-alina",
+    name: "Izgirean-Culcea Alina",
+    role: "Past-President (Fost Președinte)",
+    isBoard: true,
+    profession: "Inginer",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-jianu-cristian",
+    name: "Jianu Cristian",
+    role: "Secretar",
+    isBoard: true,
+    profession: "Inginer",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-jurca-ovidiu-caius",
+    name: "Jurca Ovidiu Caius",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-maciuca-mihaela",
+    name: "Măciucă Mihaela",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-miclea-razvan",
+    name: "Miclea Răzvan",
+    role: "Președinte (2026-2027)",
+    isBoard: true,
+    profession: "Inginer",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-milin-iulia",
+    name: "Milin Iulia",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-murasan-simona",
+    name: "Murășan Simona",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-nemesan-dinu",
     name: "Nemeșan Dinu",
     role: "Cenzor",
+    isBoard: true,
     profession: "Economist",
     email: "rotaryclubmosnitanoua@gmail.com",
     phone: "+40 746 080 065",
     status: "Activ (Cotizație la zi)",
     joinedDate: "2025"
+  },
+  {
+    id: "membru-sinatovici-claudia",
+    name: "Sinatovici Claudia",
+    role: "Vicepreședinte",
+    isBoard: true,
+    profession: "Jurnalist",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-suteu-debora",
+    name: "Șuteu Debora",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-todie-nicoleta",
+    name: "Todie Nicoleta",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-tulbure-radu",
+    name: "Tulbure Radu",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
+  },
+  {
+    id: "membru-vilcea-marian",
+    name: "Vîlcea Marian",
+    role: "Membru",
+    isBoard: false,
+    profession: "Membru Rotarian",
+    email: "rotaryclubmosnitanoua@gmail.com",
+    phone: "+40 746 080 065",
+    status: "Activ (Cotizație la zi)",
+    joinedDate: "2025"
   }
+];
+
+export const boardMembers = [
+  members.find(m => m.name === "Miclea Răzvan"),
+  members.find(m => m.name === "Izgirean-Culcea Alina"),
+  members.find(m => m.name === "Sinatovici Claudia"),
+  members.find(m => m.name === "Jianu Cristian"),
+  members.find(m => m.name === "Barbu Carmen"),
+  members.find(m => m.name === "Nemeșan Dinu")
 ];
 
 export const announcements = [
