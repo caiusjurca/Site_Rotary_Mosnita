@@ -14,106 +14,115 @@ export const DonationModal = {
               <span>Susține Clubul Rotary</span>
             </h3>
             <p class="text-xs text-blue-200 mt-1">Donațiile susțin 100% proiectele comunitare locale</p>
-            <button id="donation-modal-close" class="absolute top-4 right-4 text-white hover:text-rotary-gold transition-colors text-2xl font-bold focus:outline-none cursor-pointer">&times;</button>
+            <button id="donation-modal-close" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-white hover:text-rotary-gold hover:bg-white/10 w-10 h-10 rounded-full flex items-center justify-center text-2xl font-bold focus:outline-none transition-colors cursor-pointer z-20" title="Închide">&times;</button>
           </div>
 
-          <div class="p-6 space-y-4 flex-grow overflow-y-auto">
-            <p class="text-sm text-slate-600">
+          <div class="p-5 sm:p-6 space-y-4 flex-grow overflow-y-auto">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Orice contribuție financiară este direcționată în mod transparent către proiectele noastre active în educație, ecologizare sau sprijin medical.
             </p>
 
-            <div class="bg-slate-50 p-4 rounded-xl space-y-2.5 border border-slate-200 text-sm">
+            <div class="bg-slate-50 p-4 rounded-xl space-y-2.5 border border-slate-200 text-xs sm:text-sm">
               <div>
-                <span class="text-xs font-bold text-slate-500 block">Beneficiar:</span>
-                <span class="font-semibold text-slate-800">ASOCIAȚIA ROTARY CLUB MOȘNIȚA NOUĂ</span>
+                <span class="text-3xs font-bold text-slate-400 uppercase tracking-wider block">Beneficiar</span>
+                <span class="font-bold text-slate-800">ASOCIAȚIA ROTARY CLUB MOȘNIȚA NOUĂ</span>
               </div>
               <div>
-                <span class="text-xs font-bold text-slate-500 block">Cod Fiscal (CIF):</span>
-                <span class="font-semibold text-slate-800 font-mono">53083341</span>
+                <span class="text-3xs font-bold text-slate-400 uppercase tracking-wider block">Cod Fiscal (CIF)</span>
+                <span class="font-bold text-slate-800 font-mono">53083341</span>
               </div>
               <div>
-                <span class="text-xs font-bold text-slate-500 block">Cont Bancar (IBAN):</span>
-                <div class="flex items-center justify-between mt-0.5">
-                  <span id="iban-field" class="font-bold text-rotary-blue font-mono select-all text-xs sm:text-sm">RO23BTRLRONCRT0DB9999001</span>
-                  <button id="copy-iban-btn" class="text-xs text-rotary-blue hover:text-rotary-azure font-semibold underline ml-2 cursor-pointer">Copiază</button>
+                <span class="text-3xs font-bold text-slate-400 uppercase tracking-wider block">Cont Bancar (IBAN)</span>
+                <div class="flex items-center justify-between mt-1 bg-white p-2.5 rounded-lg border border-slate-200">
+                  <span id="iban-field" class="font-bold text-rotary-blue font-mono select-all text-xs sm:text-sm tracking-tight">RO23BTRLRONCRT0DB9999001</span>
+                  <button id="copy-iban-btn" class="text-xs text-rotary-blue hover:text-rotary-azure font-bold underline ml-2 cursor-pointer whitespace-nowrap">Copiază</button>
                 </div>
               </div>
               <div>
-                <span class="text-xs font-bold text-slate-500 block">Banca:</span>
+                <span class="text-3xs font-bold text-slate-400 uppercase tracking-wider block">Banca</span>
                 <span class="font-semibold text-slate-800">Banca Transilvania</span>
               </div>
             </div>
 
-            <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+            <div class="bg-amber-50 border border-amber-200/80 rounded-xl p-3 text-xs text-amber-900 leading-relaxed">
               <strong>Notă:</strong> Menționați la detalii plată: <em>„Sponsorizare / Donație susținere proiecte comunitare”</em>.
             </div>
           </div>
 
-          <div class="p-6 border-t border-slate-100 flex justify-end">
-            <button id="donation-modal-ok" class="btn-primary px-5 py-2.5 rounded-md font-bold text-xs cursor-pointer">Am Înțeles</button>
+          <div class="p-4 sm:p-5 border-t border-slate-100 flex justify-end bg-slate-50/50 flex-shrink-0">
+            <button id="donation-modal-ok" class="btn-primary px-6 py-2.5 rounded-lg font-bold text-xs cursor-pointer shadow-xs hover:shadow-md">Am Înțeles</button>
           </div>
         </div>
       </div>
     `;
   },
 
+  open() {
+    // Curățăm orice modal orfan rămas pe body din sesiuni anterioare
+    document.querySelectorAll('body > #donation-modal').forEach(el => el.remove());
+
+    const modal = document.getElementById('donation-modal');
+    if (!modal) return;
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    requestAnimationFrame(() => {
+      const card = modal.querySelector('.transform');
+      if (card) {
+        card.classList.remove('scale-95');
+        card.classList.add('scale-100');
+      }
+    });
+  },
+
+  close() {
+    const modal = document.getElementById('donation-modal');
+    // Deblocăm întotdeauna imediat scroll-ul paginii pentru a preveni orice blocaj
+    document.body.style.overflow = '';
+
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    const card = modal.querySelector('.transform');
+    if (card) {
+      card.classList.remove('scale-100');
+      card.classList.add('scale-95');
+    }
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 120);
+  },
+
   mount() {
+    // Curățăm orice modal duplicat de pe body
+    document.querySelectorAll('body > #donation-modal').forEach(el => el.remove());
+
     const donationModal = document.getElementById('donation-modal');
     if (!donationModal) return;
-
-    // Mutăm modalul direct pe body pentru independență totală de poziționare față de containere
-    if (donationModal.parentElement !== document.body) {
-      document.body.appendChild(donationModal);
-    }
 
     const donationOverlay = document.getElementById('donation-modal-overlay');
     const closeBtn = document.getElementById('donation-modal-close');
     const okBtn = document.getElementById('donation-modal-ok');
     const copyBtn = document.getElementById('copy-iban-btn');
 
-    const showModal = () => {
-      donationModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const card = donationModal.querySelector('.transform');
-        if (card) {
-          card.classList.remove('scale-95');
-          card.classList.add('scale-100');
-        }
-      });
-    };
+    // Închidere sigură la click pe butonul de close, butonul OK, overlay sau spațiul exterior
+    if (closeBtn) closeBtn.onclick = () => this.close();
+    if (okBtn) okBtn.onclick = () => this.close();
+    if (donationOverlay) donationOverlay.onclick = () => this.close();
 
-    const hideModal = () => {
-      const card = donationModal.querySelector('.transform');
-      if (card) {
-        card.classList.remove('scale-100');
-        card.classList.add('scale-95');
+    donationModal.onclick = (e) => {
+      if (e.target === donationModal || e.target === donationOverlay) {
+        this.close();
       }
-      setTimeout(() => {
-        donationModal.classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 150);
     };
-
-    if (donationOverlay) donationOverlay.onclick = hideModal;
-    if (closeBtn) closeBtn.onclick = hideModal;
-    if (okBtn) okBtn.onclick = hideModal;
-
-    // Conectare la TOATE butoanele cu clasa .open-donate-modal-btn
-    const donateButtons = document.querySelectorAll('.open-donate-modal-btn');
-    donateButtons.forEach(btn => {
-      btn.onclick = (e) => {
-        e.preventDefault();
-        showModal();
-      };
-    });
 
     // Copiere IBAN
     if (copyBtn) {
       copyBtn.onclick = () => {
         const ibanEl = document.getElementById('iban-field');
         if (ibanEl) {
-          navigator.clipboard.writeText(ibanEl.innerText).then(() => {
+          navigator.clipboard.writeText(ibanEl.innerText.trim()).then(() => {
             copyBtn.innerText = 'Copiat!';
             copyBtn.classList.remove('text-rotary-blue');
             copyBtn.classList.add('text-emerald-600', 'font-bold');
@@ -122,29 +131,33 @@ export const DonationModal = {
               copyBtn.classList.remove('text-emerald-600', 'font-bold');
               copyBtn.classList.add('text-rotary-blue');
             }, 2000);
+          }).catch(() => {
+            copyBtn.innerText = 'Selectat';
           });
         }
       };
     }
 
-    // Închidere la tasta Escape
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') hideModal();
-    };
-    window.addEventListener('keydown', onKeyDown);
-  },
+    // Delegare globală pentru TOATE butoanele .open-donate-modal-btn din pagină (atașată o singură dată)
+    if (!window.__donationModalDelegated) {
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.open-donate-modal-btn');
+        if (btn) {
+          e.preventDefault();
+          this.open();
+        }
+      });
+      window.__donationModalDelegated = true;
+    }
 
-  open() {
-    const donationModal = document.getElementById('donation-modal');
-    if (!donationModal) return;
-    donationModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => {
-      const card = donationModal.querySelector('.transform');
-      if (card) {
-        card.classList.remove('scale-95');
-        card.classList.add('scale-100');
-      }
-    });
+    // Închidere la tasta Escape (atașată o singură dată la nivel global)
+    if (!window.__donationModalEscBound) {
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.close();
+        }
+      });
+      window.__donationModalEscBound = true;
+    }
   }
 };

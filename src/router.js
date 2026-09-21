@@ -52,6 +52,10 @@ export class Router {
   }
 
   static handleRoute() {
+    // Ne asigurăm că scroll-ul paginii este deblocat la schimbarea rutei
+    document.body.style.overflow = '';
+    document.body.classList.remove('overflow-hidden');
+
     const appContainer = document.getElementById('app');
     if (!appContainer) return;
 

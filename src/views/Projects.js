@@ -213,6 +213,7 @@ export const ProjectsView = {
       }`;
 
       modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
       document.body.classList.add('overflow-hidden');
       const scrollableBody = modal.querySelector('.overflow-y-auto');
       if (scrollableBody) scrollableBody.scrollTop = 0;
@@ -222,6 +223,7 @@ export const ProjectsView = {
     };
 
     const hideModal = () => {
+      document.body.style.overflow = '';
       document.body.classList.remove('overflow-hidden');
       modal.querySelector('.transform').classList.remove('scale-100');
       modal.querySelector('.transform').classList.add('scale-95');
@@ -237,6 +239,12 @@ export const ProjectsView = {
     if (modalOverlay) modalOverlay.onclick = hideModal;
     if (closeBtn) closeBtn.onclick = hideModal;
     if (okBtn) okBtn.onclick = hideModal;
+
+    modal.onclick = (e) => {
+      if (e.target === modal || e.target === modalOverlay) {
+        hideModal();
+      }
+    };
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
