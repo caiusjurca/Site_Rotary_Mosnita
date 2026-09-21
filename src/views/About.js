@@ -1,9 +1,7 @@
-import { boardMembers, members } from '../data.js';
+import { members } from '../data.js';
 
 export const AboutView = {
   render() {
-    // Toți cei 6 membri ai Consiliului Director (2026-2027)
-    const leaders = boardMembers;
     // Toți cei 21 de membri ai clubului
     const allMembers = members;
 
@@ -280,68 +278,23 @@ export const AboutView = {
         </div>
       </section>
 
-      <!-- Organigrama de Conducere - Consiliul Director (2026-2027) -->
+      <!-- Tabloul Membrilor Clubului -->
       <section class="py-16 bg-slate-50 border-t border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
             <div class="flex justify-center items-center space-x-2">
-              <span class="h-1 w-10 bg-rotary-blue rounded-full"></span>
-              <span class="text-rotary-blue font-bold text-xs uppercase tracking-wider">Structura de Conducere</span>
-              <span class="h-1 w-10 bg-rotary-blue rounded-full"></span>
+              <span class="h-1 w-8 bg-rotary-gold rounded-full"></span>
+              <span class="text-rotary-gold font-bold text-xs uppercase tracking-wider">Comunitatea Noastră</span>
+              <span class="h-1 w-8 bg-rotary-gold rounded-full"></span>
             </div>
-            <h2 class="font-serif text-3xl font-bold text-rotary-blue">Consiliul Director (2026-2027)</h2>
+            <h2 class="font-serif text-3xl font-bold text-slate-800">
+              Membrii Clubului Rotary Moșnița Nouă
+            </h2>
             <p class="text-slate-600 text-xs sm:text-sm">
-              Liderii care coordonează activitatea strategică și proiectele Clubului Rotary Moșnița Nouă pentru anul rotarian curent.
+              21 de membri dedicați, uniți de valorile rotariene și dorința de a genera un impact durabil în comunitate.
             </p>
           </div>
-
-          <!-- Grid Leadership (6 Membri) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            ${leaders.map(leader => `
-              <div class="bg-white border border-slate-200/80 rounded-2xl p-6 text-center shadow-xs hover:shadow-md transition-all group flex flex-col items-center space-y-4">
-                
-                <!-- Avatar Circular cu gradient, inițiale și bordură decorativă -->
-                <div class="relative w-24 h-24 rounded-full bg-gradient-to-tr from-rotary-blue to-rotary-azure flex items-center justify-center text-white text-2xl font-bold shadow-md border-4 border-white group-hover:scale-105 transition-transform duration-300">
-                  <span>${leader.name.split(' ').map(n => n[0]).join('')}</span>
-                  <div class="absolute inset-0 rounded-full border border-white/20 border-dashed animate-spin-slow"></div>
-                </div>
-
-                <div class="space-y-1">
-                  <h3 class="font-serif font-bold text-slate-800 text-lg group-hover:text-rotary-blue transition-colors leading-tight">
-                    ${leader.name}
-                  </h3>
-                  <p class="text-rotary-gold text-xs font-bold uppercase tracking-wider">${leader.role}</p>
-                </div>
-
-                <div class="w-full border-t border-slate-100 pt-3 text-xs text-slate-500 space-y-1">
-                  <div>
-                    <span class="font-semibold text-slate-700">Profesie:</span> ${leader.profession}
-                  </div>
-                  <div>
-                    <span class="font-semibold text-slate-700">Membru din:</span> ${leader.joinedDate}
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-
-          <!-- Secțiune Elegantă: Tabloul Membrilor Clubului -->
-          <div class="mt-20 pt-16 border-t border-slate-200">
-            
-            <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
-              <div class="flex justify-center items-center space-x-2">
-                <span class="h-1 w-8 bg-rotary-gold rounded-full"></span>
-                <span class="text-rotary-gold font-bold text-xs uppercase tracking-wider">Comunitatea Noastră</span>
-                <span class="h-1 w-8 bg-rotary-gold rounded-full"></span>
-              </div>
-              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-slate-800">
-                Membrii Clubului Rotary Moșnița Nouă
-              </h3>
-              <p class="text-slate-600 text-xs sm:text-sm">
-                21 de membri dedicați, uniți de valorile rotariene și dorința de a genera un impact durabil în comunitate.
-              </p>
-            </div>
 
             <!-- Bara de Filtrare și Căutare Rapidă -->
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs">
@@ -447,8 +400,6 @@ export const AboutView = {
               </svg>
               <p class="text-slate-500 text-xs font-semibold">Niciun membru nu corespunde termenului căutat.</p>
             </div>
-
-          </div>
 
         </div>
       </section>
