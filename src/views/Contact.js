@@ -218,34 +218,75 @@ export const ContactView = {
         
         // Dezactivează butonul și arată spinner
         submitBtn.disabled = true;
-        btnText.innerText = 'Se trimite...';
+        btnText.innerText = 'Se procesează...';
         btnSpinner.classList.remove('hidden');
         feedback.className = 'hidden';
 
         const nameVal = document.getElementById('name').value.trim();
         const emailVal = document.getElementById('email').value.trim();
+        const phoneVal = document.getElementById('phone') ? document.getElementById('phone').value.trim() : '';
+        const subjectSelect = document.getElementById('subject');
+        const subjectKey = subjectSelect ? subjectSelect.value : 'general';
         const messageVal = document.getElementById('message').value.trim();
 
-        // Validări suplimentare simple
+        // Validări câmpuri obligatorii
         if (!nameVal || !emailVal || !messageVal) {
-          showFeedback('Vă rugăm să completați toate câmpurile obligatorii.', 'bg-red-50 text-red-700 border border-red-200');
+          showFeedback('Vă rugăm să completați toate câmpurile obligatorii (Nume, E-mail, Mesaj).', 'bg-red-50 text-red-700 border border-red-200');
           resetButton();
           return;
         }
 
-        // Simulăm un request de rețea de 1.5 secunde
+        const subjectMap = {
+          general: 'Informații Generale',
+          volunteering: 'Voluntariat / Implicare',
+          donations: 'Donații / Sponsorizări',
+          proposals: 'Propunere Proiect / Parteneriat'
+        };
+        const subjectName = subjectMap[subjectKey] || 'Mesaj de Contact';
+
+        const emailSubject = `[Contact Rotary Moșnița] ${subjectName} - ${nameVal}`;
+        const emailBody = `Nume complet: ${nameVal}\nAdresă e-mail: ${emailVal}\nTelefon: ${phoneVal || 'Nespecificat'}\nSubiect solicitare: ${subjectName}\n\n--------------------------------------------------\nMesaj:\n${messageVal}\n--------------------------------------------------`;
+
+        const mailtoUrl = `mailto:rotaryclubmosnitanoua@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rotaryclubmosnitanoua@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+        // Declanșăm deschiderea clientului de e-mail local (aplicație mobilă sau desktop)
+        window.location.href = mailtoUrl;
+
+        // Afișăm feedback detaliat și link-uri utile în caz că browserul nu deschide automat clientul
         setTimeout(() => {
-          showFeedback(`Vă mulțumim, ${nameVal}! Mesajul dumneavoastră a fost înregistrat cu succes. Vă vom răspunde pe adresa ${emailVal}.`, 'bg-emerald-50 text-emerald-700 border border-emerald-200');
-          form.reset();
+          showFeedback(`
+            <div class="space-y-3">
+              <div class="flex items-center space-x-2 text-emerald-800 font-bold">
+                <svg class="h-5 w-5 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Aplicația de e-mail a fost lansată cu datele precompletate!</span>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Verificați fereastra de e-mail deschisă și apăsați butonul <strong>„Send / Trimite”</strong> pentru a ne transmite mesajul. Dacă aplicația nu s-a deschis automat, alegeți o opțiune de mai jos:
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <a href="${mailtoUrl}" class="px-3.5 py-2 bg-emerald-600 text-white rounded-lg text-xs font-bold hover:bg-emerald-700 transition-colors inline-flex items-center space-x-1.5 shadow-xs">
+                  <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  <span>Reîncearcă deschiderea aplicației de e-mail</span>
+                </a>
+                <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 bg-white border border-slate-300 text-slate-700 rounded-lg text-xs font-bold hover:bg-slate-50 transition-colors inline-flex items-center space-x-1.5 shadow-xs">
+                  <svg class="h-3.5 w-3.5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                  <span>Deschide direct în Gmail Web</span>
+                </a>
+              </div>
+            </div>
+          `, 'bg-emerald-50 text-emerald-950 border border-emerald-200');
           resetButton();
-        }, 1500);
+        }, 500);
       };
     }
 
-    function showFeedback(msg, classes) {
+    function showFeedback(htmlContent, classes) {
       if (feedback) {
-        feedback.innerText = msg;
-        feedback.className = `p-4 text-xs font-semibold rounded-lg ${classes}`;
+        feedback.innerHTML = htmlContent;
+        feedback.className = `p-4 text-xs font-semibold rounded-xl ${classes}`;
       }
     }
 
