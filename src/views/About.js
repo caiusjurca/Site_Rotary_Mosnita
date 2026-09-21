@@ -422,7 +422,7 @@ export const AboutView = {
                         ${member.name}
                       </h4>
                       
-                      <div class="mt-1 flex items-center space-x-1.5 flex-wrap gap-y-1">
+                      <div class="mt-1 flex items-center">
                         ${isBoard ? `
                           <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-3xs font-bold bg-amber-500/10 text-amber-900 border border-amber-500/20">
                             <span class="text-rotary-gold">⭐</span>
@@ -433,7 +433,6 @@ export const AboutView = {
                             <span>Membru</span>
                           </span>
                         `}
-                        <span class="text-3xs text-slate-400">• Moșnița Nouă</span>
                       </div>
                     </div>
                   </div>
