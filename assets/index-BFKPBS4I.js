@@ -1410,7 +1410,7 @@ startxref
 676
 %%EOF
             `,d=new Blob([c],{type:"application/pdf"}),u=URL.createObjectURL(d);n.href=u,n.click(),URL.revokeObjectURL(u)}).finally(()=>{document.body.removeChild(n)})}})}},w={render(){const t=x.isAuthenticated(),a=x.getCurrentUser();return`
-      <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 transition-all duration-300">
+      <header class="w-full bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center py-2 sm:py-2.5 min-h-[4.75rem] sm:min-h-[5.25rem] lg:min-h-[5.5rem] xl:min-h-[6.25rem]">
             
@@ -1484,7 +1484,7 @@ startxref
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 border-b border-slate-100 shadow-md">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div class="px-3 pt-3 pb-4 space-y-2">
             <a href="#/" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Acasă</a>
             <a href="#/despre-noi" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Despre Noi</a>
@@ -1693,7 +1693,7 @@ startxref
               <a href="#/" class="btn-primary px-6 py-3 rounded-md font-bold shadow-md">Înapoi la Acasă</a>
             </div>
           `,mount:()=>{}},title:"Pagina Nu A Fost Găsită | Rotary Club Moșnița Nouă",desc:"Pagina solicitată nu a putut fi găsită pe site-ul Rotary Club Moșnița Nouă."});const e=x.isAuthenticated();if(s.authRequired&&!e){window.location.hash="#/login";return}if(s.guestOnly&&e){window.location.hash="#/dashboard";return}document.title=s.title;const i=document.querySelector('meta[name="description"]');i&&i.setAttribute("content",s.desc),a.innerHTML=`
-      <div id="navbar-container"></div>
+      <div id="navbar-container" class="sticky top-0 z-50"></div>
       <main id="app-content" class="flex-grow opacity-0 fade-in"></main>
       <div id="footer-container"></div>
       <div id="donation-modal-container"></div>
