@@ -8,7 +8,7 @@ export const HomeView = {
       <!-- Hero Section -->
       <section class="relative bg-rotary-dark text-white overflow-hidden min-h-[85vh] flex items-center">
         <!-- Background Decorative Elements -->
-        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30" style="background-image: url('/assets/hero-bg.jpg');"></div>
+        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30" style="background-image: url('./assets/hero-bg.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-rotary-dark via-rotary-dark/95 to-transparent"></div>
         
         <!-- Animated geometric shapes (SVG) for visual appeal -->
@@ -62,7 +62,7 @@ export const HomeView = {
             <div class="relative">
               <div class="absolute -top-4 -left-4 w-72 h-72 bg-rotary-gold/10 rounded-3xl -z-10"></div>
               <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-rotary-blue/10 rounded-3xl -z-10"></div>
-              <img src="/assets/story-bg.jpg" alt="Rotary Club Moșnița Nouă în acțiune" class="rounded-2xl shadow-xl w-full object-cover aspect-video" />
+              <img src="./assets/story-bg.jpg" alt="Rotary Club Moșnița Nouă în acțiune" class="rounded-2xl shadow-xl w-full object-cover aspect-video" />
             </div>
 
             <!-- Content -->

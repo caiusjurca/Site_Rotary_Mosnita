@@ -12,7 +12,7 @@ export const Navbar = {
             
             <!-- Logo Section -->
             <a href="#/" class="flex items-center group py-1 flex-shrink-0">
-              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-14 sm:h-16 md:h-16 lg:h-16 xl:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src="./assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-14 sm:h-16 md:h-16 lg:h-16 xl:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
             </a>
 
             <!-- Desktop Navigation Links (Visible on lg and above to prevent wrapping) -->

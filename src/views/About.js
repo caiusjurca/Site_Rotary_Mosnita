@@ -8,7 +8,7 @@ export const AboutView = {
     return `
       <!-- Header Secțiune -->
       <section class="bg-rotary-dark text-white py-16 md:py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20" style="background-image: url('/assets/hero-bg.jpg');"></div>
+        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20" style="background-image: url('./assets/hero-bg.jpg');"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4">
           <div class="inline-flex items-center space-x-2 bg-rotary-gold/20 text-rotary-gold border border-rotary-gold/30 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
             <span>FONDAT ÎN ANUL 2025</span>
@@ -62,7 +62,7 @@ export const AboutView = {
             <!-- Dreapta: Imagine & Citat Card (5/12) -->
             <div class="lg:col-span-5 space-y-6">
               <div class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-100">
-                <img src="/assets/story-bg.jpg" alt="Echipa Rotary Moșnița Nouă" class="w-full h-72 object-cover" />
+                <img src="./assets/story-bg.jpg" alt="Echipa Rotary Moșnița Nouă" class="w-full h-72 object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                 <div class="absolute bottom-4 left-4 right-4 text-white">
                   <span class="text-3xs font-bold uppercase tracking-wider text-rotary-gold block mb-1">Comunitate & Acțiune</span>

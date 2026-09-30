@@ -5,7 +5,7 @@ export const DocumentsView = {
     return `
       <!-- Header Secțiune -->
       <section class="bg-rotary-dark text-white py-16 md:py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20" style="background-image: url('/assets/hero-bg.jpg');"></div>
+        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20" style="background-image: url('./assets/hero-bg.jpg');"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4">
           <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold">Documente Publice</h1>
           <p class="text-slate-300 text-base max-w-xl mx-auto font-light">

@@ -16,7 +16,7 @@ export const LoginView = {
             
             <!-- Official Rotary Logo in Login Header -->
             <div class="mx-auto mb-5 bg-white/95 p-3 rounded-2xl max-w-[280px] flex items-center justify-center shadow-md">
-              <img src="/assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-12 w-auto object-contain" />
+              <img src="./assets/logo-rotary-official.png" alt="Rotary Club Moșnița Nouă" class="h-12 w-auto object-contain" />
             </div>
             
             <h1 class="font-serif text-2xl font-bold">Portal Membri</h1>

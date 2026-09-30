@@ -13,7 +13,7 @@ export const DashboardView = {
     return `
       <!-- Header Dashboard -->
       <section class="bg-rotary-dark text-white py-12 relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-10" style="background-image: url('/assets/hero-bg.jpg');"></div>
+        <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-10" style="background-image: url('./assets/hero-bg.jpg');"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div class="space-y-2">
             <span class="inline-flex items-center space-x-1 bg-amber-500/20 text-rotary-gold border border-amber-500/30 px-3 py-1 rounded-full text-3xs font-bold uppercase tracking-wider">
