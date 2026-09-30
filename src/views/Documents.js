@@ -29,7 +29,7 @@ export const DocumentsView = {
 
             <!-- List of files -->
             <div class="space-y-4">
-              ${publicDocuments.map((doc, idx) => `
+              ${publicDocuments.map(doc => `
                 <div class="doc-card border border-slate-200/80 hover:border-rotary-blue bg-slate-50/60 hover:bg-white p-5 rounded-2xl transition-all duration-200 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-5">
                   
                   <!-- Doc Metadata -->
@@ -41,19 +41,9 @@ export const DocumentsView = {
                       </svg>
                     </div>
 
-                    <div class="space-y-1.5 min-w-0">
-                      <div class="flex items-center space-x-2">
-                        <span class="text-3xs font-bold px-2 py-0.5 rounded-full bg-rotary-blue/10 text-rotary-blue border border-rotary-blue/15">Doc #${idx + 1}</span>
-                        <h3 class="font-serif font-bold text-slate-800 text-sm sm:text-base leading-snug">${doc.title}</h3>
-                      </div>
+                    <div class="space-y-1 min-w-0">
+                      <h3 class="font-serif font-bold text-slate-800 text-sm sm:text-base leading-snug">${doc.title}</h3>
                       <p class="text-slate-600 text-xs leading-relaxed">${doc.description}</p>
-                      
-                      <!-- Badges (Size, Date, Format) -->
-                      <div class="flex flex-wrap items-center gap-2 pt-1 text-3xs text-slate-500 font-semibold">
-                        <span class="bg-slate-200/80 text-slate-700 px-2 py-0.5 rounded-md font-bold">${doc.type}</span>
-                        <span>• Mărime: <strong class="text-slate-700">${doc.size}</strong></span>
-                        <span>• Valabilitate: <strong class="text-slate-700">${doc.date}</strong></span>
-                      </div>
                     </div>
                   </div>
 
