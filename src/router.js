@@ -103,7 +103,7 @@ export class Router {
 
     // Structura Layout-ului Global
     appContainer.innerHTML = `
-      <div id="navbar-container"></div>
+      <div id="navbar-container" class="sticky top-0 z-50"></div>
       <main id="app-content" class="flex-grow opacity-0 fade-in"></main>
       <div id="footer-container"></div>
       <div id="donation-modal-container"></div>

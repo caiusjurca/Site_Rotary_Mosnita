@@ -6,7 +6,7 @@ export const Navbar = {
     const currentUser = authService.getCurrentUser();
 
     return `
-      <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 transition-all duration-300">
+      <header class="w-full bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center py-2 sm:py-2.5 min-h-[4.75rem] sm:min-h-[5.25rem] lg:min-h-[5.5rem] xl:min-h-[6.25rem]">
             
@@ -80,7 +80,7 @@ export const Navbar = {
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 border-b border-slate-100 shadow-md">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div class="px-3 pt-3 pb-4 space-y-2">
             <a href="#/" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Acasă</a>
             <a href="#/despre-noi" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-semibold">Despre Noi</a>
