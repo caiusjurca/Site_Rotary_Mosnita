@@ -74,30 +74,30 @@ export const projects = [
 export const publicDocuments = [
   {
     id: "pub-1",
-    title: "Statutul Oficial al Asociației Club Rotary Moșnița Nouă",
-    type: "PDF",
-    size: "1.2 MB",
-    date: "14 Martie 2025",
-    fileUrl: "./docs/statut_club.pdf",
-    description: "Documentul juridic ce atestă înființarea, structura, scopul non-profit și modul de funcționare al asociației noastre."
+    title: "Contract de Sponsorizare",
+    type: "PDF / Editabil",
+    size: "3.9 MB",
+    date: "An Rotarian 2026-2027",
+    fileUrl: "./docs/Contract_de_sponsorizare.pdf",
+    description: "Modelul oficial de contract de sponsorizare pentru societăți comerciale și persoane juridice care doresc să susțină proiectele noastre comunitare (educație, sănătate, prevenție și mediu)."
   },
   {
     id: "pub-2",
-    title: "Raport de Activitate Comunitare - Anul Rotarian 2025-2026",
-    type: "PDF",
-    size: "3.5 MB",
-    date: "01 Iulie 2026",
-    fileUrl: "./docs/raport_activitate_2025_2026.pdf",
-    description: "Raport detaliat care prezintă proiectele realizate, fondurile atrase și modul în care resursele financiare au fost alocate în comunitate."
+    title: "ECO HUB - Contract de Donație",
+    type: "PDF / Editabil",
+    size: "1.5 MB",
+    date: "An Rotarian 2026-2027",
+    fileUrl: "./docs/ECO_HUB_contract_de_donatie.pdf",
+    description: "Contractul de donație dedicat proiectului emblematic ECO HUB din satul Urseni. Oferă cadru juridic transparent pentru contribuția la amenajarea noului parc public ecologic."
   },
   {
     id: "pub-3",
-    title: "Formular de Înscriere în Programul de Voluntariat",
-    type: "PDF / Editabil",
-    size: "450 KB",
-    date: "Ianuarie 2026",
-    fileUrl: "./docs/formular_voluntar.pdf",
-    description: "Formular destinat cetățenilor din Moșnița Nouă care doresc să se alăture acțiunilor noastre punctuale de voluntariat."
+    title: "Cererea D230 (Redirecționare 3,5% Impozit)",
+    type: "PDF / Formular ANAF",
+    size: "140 KB",
+    date: "An Fiscal Curent",
+    fileUrl: "./docs/D230_v109_09012025.pdf",
+    description: "Formularul 230 oficial pentru redirecționarea a 3,5% din impozitul pe venit către Asociația Rotary Club Moșnița Nouă. Procedură complet gratuită pentru salariați și pensionari."
   }
 ];
 

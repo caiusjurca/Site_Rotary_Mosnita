@@ -15,7 +15,7 @@ const routes = {
   '/': { view: HomeView, title: 'Acasă | Rotary Club Moșnița Nouă', desc: 'Bun venit la Rotary Club Moșnița Nouă. Descoperă activitatea noastra, proiectele comunitare și cum te poți alătura ca voluntar.' },
   '/despre-noi': { view: AboutView, title: 'Despre Noi | Rotary Club Moșnița Nouă', desc: 'Află mai multe despre istoricul clubului nostru, valorile noastre călăuzitoare și conducerea actuală.' },
   '/proiecte': { view: ProjectsView, title: 'Proiecte | Rotary Club Moșnița Nouă', desc: 'Galeria proiectelor comunitare active și finalizate organizate de Rotary Club Moșnița Nouă.' },
-  '/documente-publice': { view: DocumentsView, title: 'Documente Publice | Rotary Club Moșnița Nouă', desc: 'Descarcă documentele noastre oficiale, rapoartele de activitate anuală și formularele publice.' },
+  '/documente-publice': { view: DocumentsView, title: 'Documente Publice | Rotary Club Moșnița Nouă', desc: 'Descarcă formularele și contractele oficiale: Contract de sponsorizare, Contract de donație ECO HUB și Cererea D230.' },
   '/contact': { view: ContactView, title: 'Contact | Rotary Club Moșnița Nouă', desc: 'Ia legătura cu noi pentru propuneri de proiecte, parteneriate, voluntariat sau donații. Sediu Moșnița Nouă.' },
   '/login': { view: LoginView, title: 'Autentificare Membrii | Rotary Club Moșnița Nouă', desc: 'Zonă securizată pentru logarea membrilor activi ai clubului Rotary Moșnița Nouă.', guestOnly: true },
   '/dashboard': { view: DashboardView, title: 'Panou de Control Membrii | Rotary Club Moșnița Nouă', desc: 'Panou intern de administrare și documente secrete pentru membrii asociației.', authRequired: true }
